@@ -101,15 +101,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .cc{background:var(--card);border:1px solid rgba(2,215,250,.06);cursor:pointer;position:relative;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
 .cc:hover{border-color:rgba(2,215,250,.25);background:#0a1520}
 .cc.feat{grid-column:span 2}
+
+/* Thumb */
 .cthumb{width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:#050c14;display:flex;align-items:center;justify-content:center}
 .cthumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block}
 .cc:hover .cthumb img{transform:scale(1.05)}
-.cph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#060e18 0%,#091524 100%);border-bottom:1px solid rgba(2,215,250,.08)}
+/* placeholder shown when img fails or not set */
+.cph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#060e18,#091524)}
 .cph svg{width:44px;height:44px;opacity:.3}
 .cph span{font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(2,215,250,.35);letter-spacing:2px;text-transform:uppercase}
+/* play badge on hover */
 .cplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(2,215,250,.15);border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;pointer-events:none}
 .cplay svg{width:18px;height:18px;fill:var(--cyan);margin-left:3px}
 .cc:hover .cplay{opacity:1}
+
 .cbody{padding:28px;flex:1;display:flex;flex-direction:column}
 .ccat{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .ccat::before{content:'';width:14px;height:1px;background:var(--cyan)}
@@ -130,21 +135,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .mclose{position:absolute;top:14px;right:18px;font-size:22px;color:var(--gray);cursor:pointer;font-family:'Orbitron',monospace;font-weight:700;transition:color .2s;z-index:1;line-height:1}
 .mclose:hover{color:var(--cyan)}
 
-/* IMG slot */
-.miph{width:100%;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg,#040b12 0%,#081422 100%);border-bottom:1px solid rgba(2,215,250,.1)}
-.miph svg{width:56px;height:56px;opacity:.2}
-.miph p{font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(2,215,250,.3);letter-spacing:2px;text-align:center;line-height:1.9}
-
-/* real img in modal */
+/* Modal image */
 .mimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-bottom:1px solid rgba(2,215,250,.1)}
+.miph{width:100%;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg,#040b12,#081422);border-bottom:1px solid rgba(2,215,250,.1)}
+.miph svg{width:56px;height:56px;opacity:.2}
+.miph p{font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(2,215,250,.3);letter-spacing:2px;text-align:center;line-height:2}
 
-/* Video slot */
-.mvph{width:100%;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#040b12}
-.mvph svg{width:52px;height:52px;opacity:.25}
-.mvph p{font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(2,215,250,.3);letter-spacing:2px;text-align:center;line-height:1.9}
+/* Modal video */
 .mviframe{width:100%;aspect-ratio:16/9;border:none;display:block}
+.mvph{width:100%;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:#040b12}
+.mvph svg{width:52px;height:52px;opacity:.25}
+.mvph p{font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(2,215,250,.3);letter-spacing:2px;text-align:center;line-height:2}
+.mvph code{color:rgba(2,215,250,.55);background:rgba(2,215,250,.06);padding:2px 8px}
 
-/* tabs */
+/* Modal tabs + panes */
 .mtabs{display:flex;border-bottom:1px solid rgba(2,215,250,.1)}
 .mtab{padding:12px 24px;font-family:'Orbitron',monospace;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);cursor:pointer;border-bottom:2px solid transparent;transition:.2s}
 .mtab.active{color:var(--cyan);border-bottom-color:var(--cyan)}
@@ -156,8 +160,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .mtags2{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
 .mtag2{padding:4px 14px;border:1px solid rgba(2,215,250,.2);font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(2,215,250,.65);letter-spacing:1px}
 .mlinks{display:flex;gap:12px;flex-wrap:wrap}
-.mgh{padding:10px 22px;background:transparent;border:1px solid rgba(255,255,255,.2);color:#fff;font-family:'Orbitron',monospace;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%);transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.mgh:hover{border-color:var(--cyan);color:var(--cyan)}
 .mlive{padding:10px 22px;background:var(--cyan);color:#000;font-family:'Orbitron',monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%);transition:all .2s;display:inline-flex;align-items:center;gap:8px}
 .mlive:hover{background:#fff;box-shadow:0 0 20px rgba(2,215,250,.5)}
 .mwa{padding:10px 22px;background:#25D366;color:#000;font-family:'Orbitron',monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%);transition:all .2s;display:inline-flex;align-items:center;gap:8px}
@@ -222,7 +224,7 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
 .fsoc a{width:34px;height:34px;border:1px solid rgba(2,215,250,.12);display:flex;align-items:center;justify-content:center;color:var(--gray);text-decoration:none;font-size:12px;font-weight:700;transition:.2s;clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%)}
 .fsoc a:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-dim)}
 
-/* WHATSAPP FLOAT */
+/* WA FLOAT */
 .wafloat{position:fixed;bottom:28px;right:28px;z-index:1500;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;transition:all .25s;text-decoration:none}
 .wafloat:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,.6)}
 .wafloat svg{width:30px;height:30px;fill:#fff}
@@ -339,56 +341,56 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
     </div>
     <div class="cgrid" id="cgrid">
 
-      <!-- CASE 1: Digital Twin (featured) -->
+      <!-- CASE 1 -->
       <div class="cc feat reveal" data-cat="hardware" onclick="om('digitalTwin')">
         <div class="cthumb">
-          <!-- ╔══ IMAGEM ══╗ Substitua o bloco abaixo por: <img src="imagens/digital-twin.jpg" alt="Digital Twin"> -->
-          <div class="cph"><svg viewBox="0 0 56 56" fill="none"><rect x="8" y="8" width="40" height="40" stroke="#02d7fa" stroke-width="1.5"/><circle cx="28" cy="28" r="8" stroke="#02d7fa" stroke-width="1.5"/><line x1="28" y1="8" x2="28" y2="20" stroke="#02d7fa" stroke-width="1"/><line x1="28" y1="36" x2="28" y2="48" stroke="#02d7fa" stroke-width="1"/><line x1="8" y1="28" x2="20" y2="28" stroke="#02d7fa" stroke-width="1"/><line x1="36" y1="28" x2="48" y2="28" stroke="#02d7fa" stroke-width="1"/></svg><span>Inserir imagem do projeto</span></div>
+          <img src="https://raw.githubusercontent.com/RomuloEXavier2/DigitalTwin/main/assets/DigitalTwin.jpg" alt="Digital Twin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="8" y="8" width="40" height="40" stroke="#02d7fa" stroke-width="1.5"/><circle cx="28" cy="28" r="8" stroke="#02d7fa" stroke-width="1.5"/><line x1="28" y1="8" x2="28" y2="20" stroke="#02d7fa" stroke-width="1"/><line x1="28" y1="36" x2="28" y2="48" stroke="#02d7fa" stroke-width="1"/><line x1="8" y1="28" x2="20" y2="28" stroke="#02d7fa" stroke-width="1"/><line x1="36" y1="28" x2="48" y2="28" stroke="#02d7fa" stroke-width="1"/></svg><span>Em breve</span></div>
           <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="cbody">
           <div class="ccat">Hardware · C++ · Firebase</div>
-          <h3 class="ctit">Digital Twin — Gêmeo Digital com Sensor MPU e Firebase em Tempo Real</h3>
-          <p class="cdesc">Sistema que sincroniza dados de sensor inercial MPU com Firebase, renderizando modelo 3D (GLB) interativo no browser em tempo real. Aplicação em monitoramento industrial e rastreamento de movimento.</p>
+          <h3 class="ctit">Digital Twin — Gêmeo Digital com Sensor MPU em Tempo Real</h3>
+          <p class="cdesc">Sistema que sincroniza dados de sensor inercial MPU com Firebase, renderizando modelo 3D interativo no browser em tempo real. Monitoramento industrial e rastreamento de movimento.</p>
           <div class="cfoot"><div class="ctechs"><span>C++</span><span>Firebase</span><span>HTML/JS</span><span>3D GLB</span></div><span class="ccta">Ver projeto</span></div>
         </div>
       </div>
 
-      <!-- CASE 2: Robótica Subaquática -->
+      <!-- CASE 2 -->
       <div class="cc reveal rd1" data-cat="hardware" onclick="om('roboticaSub')">
         <div class="cthumb">
-          <!-- ╔══ IMAGEM ══╗ Substitua por: <img src="imagens/robotica-sub.jpg" alt="ROV"> -->
-          <div class="cph"><svg viewBox="0 0 56 56" fill="none"><ellipse cx="28" cy="28" rx="20" ry="12" stroke="#02d7fa" stroke-width="1.5"/><circle cx="28" cy="28" r="4" fill="#02d7fa" opacity=".6"/></svg><span>Inserir imagem do projeto</span></div>
+          <img src="https://raw.githubusercontent.com/RomuloEXavier2/Robotica-Subaquatica/main/assets/ROV.jpg" alt="ROV" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><ellipse cx="28" cy="28" rx="20" ry="12" stroke="#02d7fa" stroke-width="1.5"/><circle cx="28" cy="28" r="4" fill="#02d7fa" opacity=".6"/></svg><span>Em breve</span></div>
           <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="cbody">
           <div class="ccat">Hardware · Robótica</div>
           <h3 class="ctit">Robótica Subaquática — ROV de Exploração</h3>
-          <p class="cdesc">ROV subaquático com interface de controle web, sensor de profundidade e câmera embarcada com transmissão ao vivo.</p>
+          <p class="cdesc">ROV subaquático com controle via interface web, sensor de profundidade e câmera embarcada com transmissão ao vivo.</p>
           <div class="cfoot"><div class="ctechs"><span>HTML</span><span>Embarcado</span><span>ROV</span></div><span class="ccta">Ver projeto</span></div>
         </div>
       </div>
 
-      <!-- CASE 3: MYND Finance -->
+      <!-- CASE 3 -->
       <div class="cc reveal rd2" data-cat="software" onclick="om('myndFinance')">
         <div class="cthumb">
-          <!-- ╔══ IMAGEM ══╗ Substitua por: <img src="imagens/mynd-finance.jpg" alt="Finance"> -->
-          <div class="cph"><svg viewBox="0 0 56 56" fill="none"><rect x="6" y="14" width="44" height="28" rx="3" stroke="#02d7fa" stroke-width="1.5"/><polyline points="12,34 20,26 28,30 36,22 44,26" stroke="#02d7fa" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="44" cy="26" r="3" fill="#02d7fa"/></svg><span>Inserir imagem do projeto</span></div>
+          <img src="https://raw.githubusercontent.com/RomuloEXavier2/myndfinance/main/assets/MyndFinance.jpg" alt="MYND Finance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="6" y="14" width="44" height="28" rx="3" stroke="#02d7fa" stroke-width="1.5"/><polyline points="12,34 20,26 28,30 36,22 44,26" stroke="#02d7fa" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span>Em breve</span></div>
           <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="cbody">
           <div class="ccat">Software · FinTech · React</div>
-          <h3 class="ctit">MYND Finance — Plataforma de Gestão Financeira com IA</h3>
+          <h3 class="ctit">MYND Finance — Gestão Financeira com IA</h3>
           <p class="cdesc">App full-stack com React, TypeScript e Supabase. Dashboard interativo, análise de despesas e integração com IA para insights preditivos.</p>
           <div class="cfoot"><div class="ctechs"><span>React</span><span>TypeScript</span><span>Supabase</span></div><span class="ccta">Ver projeto</span></div>
         </div>
       </div>
 
-      <!-- CASE 4: Access Control -->
+      <!-- CASE 4 -->
       <div class="cc reveal rd3" data-cat="hardware" onclick="om('accessControl')">
         <div class="cthumb">
-          <!-- ╔══ IMAGEM ══╗ Substitua por: <img src="imagens/access-control.jpg" alt="Access"> -->
-          <div class="cph"><svg viewBox="0 0 56 56" fill="none"><rect x="18" y="22" width="20" height="24" rx="2" stroke="#02d7fa" stroke-width="1.5"/><path d="M22 22v-6a6 6 0 0112 0v6" stroke="#02d7fa" stroke-width="1.5" fill="none"/><circle cx="28" cy="34" r="3" fill="#02d7fa" opacity=".7"/></svg><span>Inserir imagem do projeto</span></div>
+          <img src="https://raw.githubusercontent.com/RomuloEXavier2/Mynd-Access-Control/main/assets/AccessControl.jpg" alt="Access Control" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="18" y="22" width="20" height="24" rx="2" stroke="#02d7fa" stroke-width="1.5"/><path d="M22 22v-6a6 6 0 0112 0v6" stroke="#02d7fa" stroke-width="1.5" fill="none"/><circle cx="28" cy="34" r="3" fill="#02d7fa" opacity=".7"/></svg><span>Em breve</span></div>
           <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="cbody">
@@ -399,67 +401,67 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
         </div>
       </div>
 
-      <!-- CASE 5: Auditor Bot -->
+      <!-- CASE 5 -->
       <div class="cc reveal rd4" data-cat="software" onclick="om('auditorBot')">
         <div class="cthumb">
-          <!-- ╔══ IMAGEM ══╗ Substitua por: <img src="imagens/auditor-bot.jpg" alt="Auditor"> -->
-          <div class="cph"><svg viewBox="0 0 56 56" fill="none"><rect x="14" y="10" width="28" height="36" rx="3" stroke="#02d7fa" stroke-width="1.5"/><line x1="20" y1="20" x2="36" y2="20" stroke="#02d7fa" stroke-width="1"/><line x1="20" y1="27" x2="36" y2="27" stroke="#02d7fa" stroke-width="1"/><line x1="20" y1="34" x2="30" y2="34" stroke="#02d7fa" stroke-width="1"/></svg><span>Inserir imagem do projeto</span></div>
+          <img src="https://raw.githubusercontent.com/RomuloEXavier2/Auditor_Bot/main/assets/AuditorBot.jpg" alt="Auditor Bot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="14" y="10" width="28" height="36" rx="3" stroke="#02d7fa" stroke-width="1.5"/><line x1="20" y1="20" x2="36" y2="20" stroke="#02d7fa" stroke-width="1"/><line x1="20" y1="27" x2="36" y2="27" stroke="#02d7fa" stroke-width="1"/><line x1="20" y1="34" x2="30" y2="34" stroke="#02d7fa" stroke-width="1"/></svg><span>Em breve</span></div>
           <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="cbody">
           <div class="ccat">Software · IA · Automação</div>
           <h3 class="ctit">Auditor Bot — Agente de IA para Auditoria Automatizada</h3>
-          <p class="cdesc">Bot que audita documentos, contratos e dados financeiros. Gera relatórios com inconsistências, riscos e score de conformidade.</p>
+          <p class="cdesc">Agente que audita documentos, contratos e dados financeiros. Gera relatórios com inconsistências, riscos e score de conformidade.</p>
           <div class="cfoot"><div class="ctechs"><span>Python</span><span>LLM</span><span>Automação</span></div><span class="ccta">Ver projeto</span></div>
         </div>
       </div>
 
-      <!-- CASE 6: Academic Assistant -->
+      <!-- CASE 6 -->
       <div class="cc reveal rd5" data-cat="software" onclick="om('academicAssistant')">
         <div class="cthumb">
-          <!-- ╔══ IMAGEM ══╗ Substitua por: <img src="imagens/academic-assistant.jpg" alt="Academic"> -->
-          <div class="cph"><svg viewBox="0 0 56 56" fill="none"><polygon points="28,6 50,18 50,38 28,50 6,38 6,18" fill="none" stroke="#02d7fa" stroke-width="1.5"/><circle cx="28" cy="28" r="5" fill="#02d7fa" opacity=".8"/></svg><span>Inserir imagem do projeto</span></div>
+          <img src="https://raw.githubusercontent.com/RomuloEXavier2/Academic_Assistant/main/assets/AcademicAssistant.jpg" alt="Academic Assistant" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><polygon points="28,6 50,18 50,38 28,50 6,38 6,18" fill="none" stroke="#02d7fa" stroke-width="1.5"/><circle cx="28" cy="28" r="5" fill="#02d7fa" opacity=".8"/></svg><span>Em breve</span></div>
           <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="cbody">
           <div class="ccat">Software · IA · Educação</div>
           <h3 class="ctit">Academic Assistant — Assistente Educacional com IA Generativa</h3>
-          <p class="cdesc">Assistente para estudantes universitários: gera resumos, explica conceitos, revisa trabalhos e sugere referências bibliográficas com RAG.</p>
+          <p class="cdesc">Assistente para estudantes: gera resumos, explica conceitos, revisa trabalhos e sugere referências bibliográficas com RAG.</p>
           <div class="cfoot"><div class="ctechs"><span>Python</span><span>LLM</span><span>RAG</span></div><span class="ccta">Ver projeto</span></div>
         </div>
       </div>
 
-      <!-- CASE 7: Unilovers Dashboard -->
+      <!-- CASE 7 -->
       <div class="cc reveal rd1" data-cat="web" onclick="om('unilovers')">
         <div class="cthumb">
-          <!-- ╔══ IMAGEM ══╗ Substitua por: <img src="imagens/unilovers.jpg" alt="Unilovers"> -->
-          <div class="cph"><svg viewBox="0 0 56 56" fill="none"><rect x="4" y="4" width="48" height="48" rx="4" stroke="#02d7fa" stroke-width="1.5"/><rect x="10" y="28" width="8" height="18" fill="rgba(2,215,250,.2)" stroke="#02d7fa" stroke-width="1"/><rect x="24" y="20" width="8" height="26" fill="rgba(2,215,250,.3)" stroke="#02d7fa" stroke-width="1"/><rect x="38" y="14" width="8" height="32" fill="rgba(2,215,250,.4)" stroke="#02d7fa" stroke-width="1"/></svg><span>Inserir imagem do projeto</span></div>
+          <img src="https://raw.githubusercontent.com/RomuloEXavier2/Unilovers2/main/assets/Unilovers.jpg" alt="Unilovers" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="4" y="4" width="48" height="48" rx="4" stroke="#02d7fa" stroke-width="1.5"/><rect x="10" y="28" width="8" height="18" fill="rgba(2,215,250,.2)" stroke="#02d7fa" stroke-width="1"/><rect x="24" y="20" width="8" height="26" fill="rgba(2,215,250,.3)" stroke="#02d7fa" stroke-width="1"/><rect x="38" y="14" width="8" height="32" fill="rgba(2,215,250,.4)" stroke="#02d7fa" stroke-width="1"/></svg><span>Em breve</span></div>
           <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="cbody">
           <div class="ccat">Web · Dashboard · Analytics</div>
           <h3 class="ctit">Unilovers — Dashboard de Analytics e Projeção Financeira</h3>
-          <p class="cdesc">Plataforma com dashboard de métricas, análise comparativa e projeções financeiras para 2025. Múltiplos módulos de visualização e relatórios.</p>
+          <p class="cdesc">Plataforma com dashboard de métricas, análise comparativa e projeções financeiras para 2025. Múltiplos módulos de visualização.</p>
           <div class="cfoot"><div class="ctechs"><span>HTML</span><span>JS</span><span>Charts</span></div><span class="ccta">Ver projeto</span></div>
         </div>
       </div>
 
-      <!-- CASE 8: Industrial Monitor -->
+      <!-- CASE 8 -->
       <div class="cc reveal rd2" data-cat="software" onclick="om('industrialMonitor')">
         <div class="cthumb">
-          <!-- ╔══ IMAGEM ══╗ Substitua por: <img src="imagens/industrial-monitor.jpg" alt="Monitor"> -->
-          <div class="cph"><svg viewBox="0 0 56 56" fill="none"><rect x="4" y="10" width="48" height="30" rx="2" stroke="#02d7fa" stroke-width="1.5"/><circle cx="14" cy="25" r="5" stroke="#02d7fa" stroke-width="1" fill="rgba(2,215,250,.1)"/><polyline points="24,30 30,20 36,26 42,18" stroke="#02d7fa" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span>Inserir imagem do projeto</span></div>
+          <img src="https://raw.githubusercontent.com/RomuloEXavier2/DigitalTwin/main/assets/IndustrialMonitor.jpg" alt="Industrial Monitor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="4" y="10" width="48" height="30" rx="2" stroke="#02d7fa" stroke-width="1.5"/><polyline points="24,30 30,20 36,26 42,18" stroke="#02d7fa" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span>Em breve</span></div>
           <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="cbody">
           <div class="ccat">Software · Monitoramento Industrial</div>
           <h3 class="ctit">MYND Monitor — Dashboard de Produção Industrial em Tempo Real</h3>
-          <p class="cdesc">Monitoramento de linha de produção com métricas ao vivo, alertas automáticos, histórico de performance e integração IoT para plantas industriais.</p>
+          <p class="cdesc">Monitoramento de linha de produção com métricas ao vivo, alertas automáticos e integração IoT para plantas industriais.</p>
           <div class="cfoot"><div class="ctechs"><span>React</span><span>IoT</span><span>Real-time</span></div><span class="ccta">Ver projeto</span></div>
         </div>
       </div>
 
-    </div>
+    </div><!-- /cgrid -->
   </div>
 </section>
 
@@ -499,7 +501,7 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   <div class="si">
     <div class="ihdr">
       <div class="reveal"><div class="slbl">Conhecimento</div><h2 class="stitle">Insights & Tendências</h2></div>
-      <a href="#" class="bo reveal">Ver todos</a>
+      <a href="https://wa.me/5511942575063?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20MYND%20e%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" class="bo reveal">Fale conosco</a>
     </div>
     <div class="igrid">
       <div class="ic tall reveal"><div class="ityp">Artigo</div><h3 class="itit">O futuro da manufatura está na convergência entre impressão 3D e eletrônica embarcada</h3><p class="ibod">Como a fabricação aditiva está transformando a prototipagem de produtos eletrônicos, eliminando ciclos de iteração e reduzindo time-to-market drasticamente.</p><div class="idate">MAR 2025</div></div>
@@ -534,13 +536,12 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
       <p class="fdesc">Tecnologia de precisão para quem pensa grande. Hardware, eletrônica e software integrados em soluções que antes não existiam.</p>
     </div>
     <div class="fcol"><h4>Serviços</h4><ul><li><a href="#services">Impressão 3D</a></li><li><a href="#services">Fabricação PCB</a></li><li><a href="#services">Usinagem CNC</a></li><li><a href="#services">Desenvolvimento Web</a></li><li><a href="#services">Dashboards & IA</a></li></ul></div>
-    <div class="fcol"><h4>Empresa</h4><ul><li><a href="#about">Sobre a MYND</a></li><li><a href="#cases">Portfólio</a></li><li><a href="#insights">Insights</a></li><li><a href="https://github.com/RomuloEXavier2" target="_blank">GitHub</a></li></ul></div>
+    <div class="fcol"><h4>Empresa</h4><ul><li><a href="#about">Sobre a MYND</a></li><li><a href="#cases">Portfólio</a></li><li><a href="#insights">Insights</a></li><li><a href="#contact">Contato</a></li></ul></div>
     <div class="fcol"><h4>Legal</h4><ul><li><a href="#">Política de Privacidade</a></li><li><a href="#">Termos de Uso</a></li><li><a href="#">LGPD</a></li></ul></div>
   </div>
   <div class="fbot">
     <span class="fcopy">© 2025 MYND — Make Your New Dreams. Todos os direitos reservados.</span>
     <div class="fsoc">
-      <a href="https://github.com/RomuloEXavier2" target="_blank">GH</a>
       <a href="https://wa.me/5511942575063" target="_blank">WA</a>
       <a href="#">IN</a>
       <a href="#">IG</a>
@@ -553,7 +554,7 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   <div class="mbox" id="mbox">
     <div class="mclose" onclick="cm()">✕</div>
     <div id="mmedia"></div>
-    <div class="mtabs" id="mtabs">
+    <div class="mtabs">
       <div class="mtab active" onclick="st(0)">Visão Geral</div>
       <div class="mtab" onclick="st(1)">📹 Vídeo / Demo</div>
     </div>
@@ -563,90 +564,190 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
 </div>
 
 <script>
-// Cursor
-const cur=document.getElementById('cursor'),cr=document.getElementById('cring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-(function ac(){cur.style.left=mx+'px';cur.style.top=my+'px';rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(ac)})();
-document.querySelectorAll('a,button,.cc,.sc,.dot').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cr.style.width='56px';cr.style.height='56px';cr.style.borderColor='rgba(2,215,250,.6)'});
-  el.addEventListener('mouseleave',()=>{cr.style.width='36px';cr.style.height='36px';cr.style.borderColor='rgba(2,215,250,.4)'});
-});
-
-// Reveal
-const rv=document.querySelectorAll('.reveal');
-const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1});
-rv.forEach(r=>ro.observe(r));
-
-// Nav scroll
-window.addEventListener('scroll',()=>{document.getElementById('mnav').style.borderBottomColor=window.scrollY>60?'rgba(2,215,250,.22)':'rgba(2,215,250,.1)'});
-
-// Nav mobile
-function tnav(){const ul=document.querySelector('.nav-links');if(ul.style.display==='flex'){ul.style.display='none'}else{ul.style.cssText='display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(0,0,0,.97);padding:20px;gap:0;border-bottom:1px solid rgba(2,215,250,.15);z-index:999'}}
-
-// Believe
-const phrases=['Não é a tecnologia que define o futuro — é quem tem a coragem de usá-la de verdade.','A melhor versão do seu produto ainda não existe. Vamos construir juntos.','Do papel à peça, do esquemático ao sistema: a MYND transforma visão em realidade tangível.','Precisão não é detalhe. Precisão é o produto.'];
-let bc=0;const btxt=document.getElementById('bt'),bdts=document.querySelectorAll('.dot');
-function sb(i){bc=i;btxt.style.opacity='0';btxt.style.transform='translateY(14px)';setTimeout(()=>{btxt.textContent=phrases[i];btxt.style.transition='opacity .45s,transform .45s';btxt.style.opacity='1';btxt.style.transform='translateY(0)'},320);bdts.forEach((d,j)=>d.classList.toggle('active',j===i))}
-bdts.forEach(d=>d.addEventListener('click',()=>sb(+d.dataset.i)));
-setInterval(()=>sb((bc+1)%phrases.length),4200);
-
-// Case filter
-function filt(cat){document.querySelectorAll('.cc').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'flex':'none'});setTimeout(()=>document.getElementById('cases').scrollIntoView({behavior:'smooth'}),100)}
-
-// ── CASE DATA ──
-// Para adicionar imagem: em "img", coloque o caminho: "imagens/nome.jpg"
-// Para adicionar vídeo: em "video", coloque o src do iframe YouTube: "https://www.youtube.com/embed/VIDEO_ID"
-const cd={
-  digitalTwin:{title:'Digital Twin — Gêmeo Digital em Tempo Real',cat:'Hardware · C++ · Firebase · 3D',desc:'Sistema de gêmeo digital que sincroniza dados de sensor inercial MPU com Firebase Realtime Database. Interface web com modelo 3D (GLB) que replica movimentos físicos em tempo real. Aplicações em monitoramento industrial, rastreamento de equipamentos e simulações de engenharia.',tags:['C++','Firebase','HTML/JS','Three.js','3D GLB','MPU Sensor'],gh:'https://github.com/RomuloEXavier2/DigitalTwin',live:null,
-    img:null,   // ← Cole aqui o caminho da imagem: "imagens/digital-twin.jpg"
-    video:null  // ← Cole aqui o embed YouTube: "https://www.youtube.com/embed/SEU_ID"
+// ─────────────────────────────────────────────────────────────────
+//  CASE DATA
+//  • img: URL da imagem no GitHub raw (preenchida automaticamente)
+//  • video: Cole o ID do YouTube não-listado.
+//           Ex: se o link for https://youtu.be/dQw4w9WgXcQ
+//           coloque: video: "dQw4w9WgXcQ"
+// ─────────────────────────────────────────────────────────────────
+const cd = {
+  digitalTwin: {
+    title: 'Digital Twin — Gêmeo Digital em Tempo Real',
+    cat: 'Hardware · C++ · Firebase · 3D',
+    desc: 'Sistema de gêmeo digital que sincroniza dados de sensor inercial MPU com Firebase Realtime Database. Interface web com modelo 3D (GLB) que replica movimentos físicos em tempo real. Aplicações em monitoramento industrial, rastreamento de equipamentos e simulações de engenharia.',
+    tags: ['C++','Firebase','HTML/JS','Three.js','3D GLB','MPU Sensor'],
+    img: 'https://raw.githubusercontent.com/RomuloEXavier2/DigitalTwin/main/assets/DigitalTwin.jpg',
+    live: null,
+    video: https://youtu.be/sOxBM0dqa8A  // ← Cole aqui o ID do YouTube: "dQw4w9WgXcQ"
   },
-  roboticaSub:{title:'Robótica Subaquática — ROV de Exploração',cat:'Hardware · Robótica · Eletrônica',desc:'ROV (Remotely Operated Vehicle) subaquático com controle via interface web. Propulsores vetoriais, sensor de profundidade, câmera embarcada com transmissão ao vivo e painel de telemetria em tempo real. Voltado para exploração subaquática e inspeção de estruturas.',tags:['HTML','Embarcado','ROV','Propulsores','Câmera','Telemetria'],gh:'https://github.com/RomuloEXavier2/Robotica-Subaquatica',live:null,
-    img:null,video:null},
-  myndFinance:{title:'MYND Finance — Plataforma de Gestão Financeira',cat:'Software · FinTech · React · Supabase',desc:'Aplicação web full-stack para gestão financeira com React, TypeScript e Supabase. Dashboard com gráficos interativos, autenticação, banco de dados em tempo real, categorização automática de transações e módulo de metas financeiras.',tags:['React','TypeScript','Supabase','Tailwind CSS','Vite','Charts'],gh:'https://github.com/RomuloEXavier2/myndfinance',live:'https://myndfinance2.lovable.app',
-    img:null,video:null},
-  accessControl:{title:'MYND Access Control — Controle de Acesso Inteligente',cat:'Hardware · IoT · Segurança',desc:'Sistema completo de controle de acesso com RFID, biometria e QR Code. Painel web de administração com logs em tempo real, gestão de perfis, alertas automáticos e integração com câmeras IP. Ideal para ambientes corporativos e laboratórios.',tags:['IoT','RFID','Biometria','Embarcado','WebApp','Segurança'],gh:'https://github.com/RomuloEXavier2/Mynd-Access-Control',live:null,
-    img:null,video:null},
-  auditorBot:{title:'Auditor Bot — Agente de IA para Auditoria',cat:'Software · IA · Python · Automação',desc:'Agente Python que automatiza auditorias em documentos, contratos, notas fiscais e dados financeiros. Usa LLMs para identificar inconsistências e não-conformidades. Gera relatórios estruturados com apontamentos, sugestões e score de conformidade.',tags:['Python','LLM','NLP','Automação','PDF','Auditoria'],gh:'https://github.com/RomuloEXavier2/Auditor_Bot',live:null,
-    img:null,video:null},
-  academicAssistant:{title:'Academic Assistant — Assistente com IA para Educação',cat:'Software · IA · Educação · RAG',desc:'Assistente virtual para estudantes universitários com IA generativa e RAG. Gera resumos, explica conceitos, revisa trabalhos e sugere referências. Processa PDFs e artigos como base de conhecimento.',tags:['Python','LLM','RAG','NLP','PDF','Educação','Vector DB'],gh:'https://github.com/RomuloEXavier2/Academic_Assistant',live:null,
-    img:null,video:null},
-  unilovers:{title:'Unilovers — Dashboard de Analytics e Projeção',cat:'Web · Dashboard · Analytics · HTML',desc:'Plataforma web com múltiplos módulos: dashboard de métricas de negócio, análise comparativa, projeções financeiras para 2025 e indicadores visuais. Arquitetura em HTML puro para máxima portabilidade.',tags:['HTML','CSS','JavaScript','Charts','Analytics','Dashboard'],gh:'https://github.com/RomuloEXavier2/Unilovers2',live:null,
-    img:null,video:null},
-  industrialMonitor:{title:'MYND Monitor — Monitoramento Industrial Real-Time',cat:'Software · React · IoT · Dashboard Industrial',desc:'Plataforma de monitoramento de linha de produção com métricas ao vivo, OEE, alertas automáticos por anomalia e histórico de performance. Integração IoT para leitura de sensores em campo.',tags:['React','IoT','Real-time','Dashboard','OEE','Sensores'],gh:null,live:'https://industrial-bright-eye.lovable.app',
-    img:null,video:null}
+  roboticaSub: {
+    title: 'Robótica Subaquática — ROV de Exploração',
+    cat: 'Hardware · Robótica · Eletrônica',
+    desc: 'ROV (Remotely Operated Vehicle) subaquático com controle via interface web. Propulsores vetoriais, sensor de profundidade, câmera embarcada com transmissão ao vivo e painel de telemetria em tempo real. Voltado para exploração subaquática e inspeção de estruturas.',
+    tags: ['HTML','Embarcado','ROV','Propulsores','Câmera','Telemetria'],
+    img: 'https://raw.githubusercontent.com/RomuloEXavier2/Robotica-Subaquatica/main/assets/ROV.jpg',
+    live: null,
+    video: sOxBM0dqa8A
+  },
+  myndFinance: {
+    title: 'MYND Finance — Plataforma de Gestão Financeira',
+    cat: 'Software · FinTech · React · Supabase',
+    desc: 'Aplicação web full-stack para gestão financeira com React, TypeScript e Supabase. Dashboard com gráficos interativos, autenticação, banco de dados em tempo real, categorização automática de transações e módulo de metas financeiras.',
+    tags: ['React','TypeScript','Supabase','Tailwind CSS','Vite','Charts'],
+    img: 'https://raw.githubusercontent.com/RomuloEXavier2/myndfinance/main/assets/MyndFinance.jpg',
+    live: 'https://myndfinance2.lovable.app',
+    video: null
+  },
+  accessControl: {
+    title: 'MYND Access Control — Controle de Acesso Inteligente',
+    cat: 'Hardware · IoT · Segurança',
+    desc: 'Sistema completo de controle de acesso com RFID, biometria e QR Code. Painel web de administração com logs em tempo real, gestão de perfis, alertas automáticos e integração com câmeras IP. Ideal para ambientes corporativos e laboratórios.',
+    tags: ['IoT','RFID','Biometria','Embarcado','WebApp','Segurança'],
+    img: 'https://raw.githubusercontent.com/RomuloEXavier2/Mynd-Access-Control/main/assets/AccessControl.jpg',
+    live: null,
+    video: null
+  },
+  auditorBot: {
+    title: 'Auditor Bot — Agente de IA para Auditoria',
+    cat: 'Software · IA · Python · Automação',
+    desc: 'Agente Python que automatiza auditorias em documentos, contratos, notas fiscais e dados financeiros. Usa LLMs para identificar inconsistências e não-conformidades. Gera relatórios estruturados com apontamentos, sugestões e score de conformidade.',
+    tags: ['Python','LLM','NLP','Automação','PDF','Auditoria'],
+    img: 'https://raw.githubusercontent.com/RomuloEXavier2/Auditor_Bot/main/assets/AuditorBot.jpg',
+    live: null,
+    video: null
+  },
+  academicAssistant: {
+    title: 'Academic Assistant — Assistente com IA para Educação',
+    cat: 'Software · IA · Educação · RAG',
+    desc: 'Assistente virtual para estudantes universitários com IA generativa e RAG. Gera resumos, explica conceitos, revisa trabalhos e sugere referências. Processa PDFs e artigos como base de conhecimento.',
+    tags: ['Python','LLM','RAG','NLP','PDF','Educação','Vector DB'],
+    img: 'https://raw.githubusercontent.com/RomuloEXavier2/Academic_Assistant/main/assets/AcademicAssistant.jpg',
+    live: null,
+    video: null
+  },
+  unilovers: {
+    title: 'Unilovers — Dashboard de Analytics e Projeção',
+    cat: 'Web · Dashboard · Analytics · HTML',
+    desc: 'Plataforma web com múltiplos módulos: dashboard de métricas de negócio, análise comparativa, projeções financeiras para 2025 e indicadores visuais. Arquitetura em HTML puro para máxima portabilidade e velocidade.',
+    tags: ['HTML','CSS','JavaScript','Charts','Analytics','Dashboard'],
+    img: 'https://raw.githubusercontent.com/RomuloEXavier2/Unilovers2/main/assets/Unilovers.jpg',
+    live: null,
+    video: null
+  },
+  industrialMonitor: {
+    title: 'MYND Monitor — Monitoramento Industrial Real-Time',
+    cat: 'Software · React · IoT · Dashboard Industrial',
+    desc: 'Plataforma de monitoramento de linha de produção com métricas ao vivo, OEE, alertas automáticos por anomalia e histórico de performance. Integração IoT para leitura de sensores em campo.',
+    tags: ['React','IoT','Real-time','Dashboard','OEE','Sensores'],
+    img: 'https://raw.githubusercontent.com/RomuloEXavier2/DigitalTwin/main/assets/IndustrialMonitor.jpg',
+    live: 'https://industrial-bright-eye.lovable.app',
+    video: null
+  }
 };
 
-// Modal open
-function om(id){
-  const d=cd[id];
-  // Img
-  if(d.img){
-    document.getElementById('mmedia').innerHTML=`<img src="${d.img}" class="mimg" alt="${d.title}">`;
+// ─── Modal ───
+function om(id) {
+  const d = cd[id];
+  // Image
+  if (d.img) {
+    document.getElementById('mmedia').innerHTML =
+      `<img src="${d.img}" class="mimg" alt="${d.title}"
+        onerror="this.outerHTML='<div class=\\'miph\\'><svg viewBox=\\'0 0 56 56\\' fill=\\'none\\' width=\\'56\\' height=\\'56\\'><rect x=\\'4\\' y=\\'4\\' width=\\'48\\' height=\\'48\\' rx=\\'4\\' stroke=\\'#02d7fa\\' stroke-width=\\'1.5\\'/></svg><p>Imagem em breve</p></div>'">`;
   } else {
-    document.getElementById('mmedia').innerHTML=`<div class="miph"><svg viewBox="0 0 56 56" fill="none" width="56" height="56"><rect x="4" y="4" width="48" height="48" rx="4" stroke="#02d7fa" stroke-width="1.5"/><polyline points="4,38 16,26 24,34 36,20 52,38" stroke="#02d7fa" stroke-width="1.5" fill="none"/><circle cx="18" cy="18" r="5" stroke="#02d7fa" stroke-width="1" fill="rgba(2,215,250,.1)"/></svg><p>╔═ INSERIR IMAGEM ═╗<br>No arquivo HTML, localize <code style="color:rgba(2,215,250,.5)">caseData.${id}.img</code><br>e coloque o caminho: <code style="color:rgba(2,215,250,.5)">"imagens/nome.jpg"</code></p></div>`;
+    document.getElementById('mmedia').innerHTML =
+      `<div class="miph"><svg viewBox="0 0 56 56" fill="none" width="56" height="56"><rect x="4" y="4" width="48" height="48" rx="4" stroke="#02d7fa" stroke-width="1.5"/></svg><p>Imagem em breve</p></div>`;
   }
-  // Pane 0
-  const links=[];
-  if(d.gh) links.push(`<a href="${d.gh}" target="_blank" class="mgh">⬡ GitHub</a>`);
-  if(d.live) links.push(`<a href="${d.live}" target="_blank" class="mlive">↗ Ver ao Vivo</a>`);
+  // Pane 0 — overview
+  const links = [];
+  if (d.live) links.push(`<a href="${d.live}" target="_blank" class="mlive">↗ Ver ao Vivo</a>`);
   links.push(`<a href="https://wa.me/5511942575063?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20um%20projeto%20similar%20ao%20${encodeURIComponent(d.title)}" target="_blank" class="mwa">💬 Quero algo similar</a>`);
-  document.getElementById('mp0').innerHTML=`<div class="mcat">${d.cat}</div><h2 class="mtit">${d.title}</h2><p class="mdesc">${d.desc}</p><div class="mtags2">${d.tags.map(t=>`<span class="mtag2">${t}</span>`).join('')}</div><div class="mlinks">${links.join('')}</div>`;
-  // Pane 1
-  if(d.video){
-    document.getElementById('mp1').innerHTML=`<iframe src="${d.video}" class="mviframe" allowfullscreen title="${d.title}"></iframe>`;
+  document.getElementById('mp0').innerHTML =
+    `<div class="mcat">${d.cat}</div>
+     <h2 class="mtit">${d.title}</h2>
+     <p class="mdesc">${d.desc}</p>
+     <div class="mtags2">${d.tags.map(t=>`<span class="mtag2">${t}</span>`).join('')}</div>
+     <div class="mlinks">${links.join('')}</div>`;
+  // Pane 1 — video
+  if (d.video) {
+    document.getElementById('mp1').innerHTML =
+      `<iframe class="mviframe"
+        src="https://www.youtube.com/embed/${d.video}?rel=0&modestbranding=1"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen title="${d.title}"></iframe>`;
   } else {
-    document.getElementById('mp1').innerHTML=`<div class="mvph"><svg viewBox="0 0 56 56" fill="none" width="52" height="52"><rect x="4" y="10" width="48" height="36" rx="3" stroke="#02d7fa" stroke-width="1.5"/><polygon points="22,20 22,36 38,28" fill="#02d7fa" opacity=".3" stroke="#02d7fa" stroke-width="1.5"/></svg><p>╔═ INSERIR VÍDEO ═╗<br>Em <code style="color:rgba(2,215,250,.5)">caseData.${id}.video</code> cole o src do YouTube/Vimeo:<br><code style="color:rgba(2,215,250,.5)">"https://www.youtube.com/embed/SEU_VIDEO_ID"</code></p></div>`;
+    document.getElementById('mp1').innerHTML =
+      `<div class="mvph">
+        <svg viewBox="0 0 56 56" fill="none" width="52" height="52"><rect x="4" y="10" width="48" height="36" rx="3" stroke="#02d7fa" stroke-width="1.5"/><polygon points="22,20 22,36 38,28" fill="#02d7fa" opacity=".3" stroke="#02d7fa" stroke-width="1.5"/></svg>
+        <p>Vídeo em breve<br><br>
+        Quando tiver o vídeo no YouTube não-listado,<br>
+        copie o ID da URL: <code>youtu.be/<strong>ESTE_TRECHO</strong></code><br>
+        e cole em <code>cd.${id}.video</code> no código</p>
+      </div>`;
   }
   st(0);
   document.getElementById('mov').classList.add('open');
-  document.body.style.overflow='hidden';
+  document.body.style.overflow = 'hidden';
 }
-function cm(){document.getElementById('mov').classList.remove('open');document.body.style.overflow=''}
-function cmobg(e){if(e.target===document.getElementById('mov'))cm()}
-function st(i){document.querySelectorAll('.mtab').forEach((t,j)=>t.classList.toggle('active',j===i));document.querySelectorAll('.mpane').forEach((p,j)=>p.classList.toggle('active',j===i))}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')cm()});
+function cm() { document.getElementById('mov').classList.remove('open'); document.body.style.overflow = ''; }
+function cmobg(e) { if (e.target === document.getElementById('mov')) cm(); }
+function st(i) {
+  document.querySelectorAll('.mtab').forEach((t,j) => t.classList.toggle('active', j===i));
+  document.querySelectorAll('.mpane').forEach((p,j) => p.classList.toggle('active', j===i));
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') cm(); });
+
+// ─── Filter ───
+function filt(cat) {
+  document.querySelectorAll('.cc').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'flex' : 'none';
+  });
+  setTimeout(() => document.getElementById('cases').scrollIntoView({behavior:'smooth'}), 100);
+}
+
+// ─── Cursor ───
+const cur = document.getElementById('cursor'), cr = document.getElementById('cring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+(function ac(){ cur.style.left=mx+'px'; cur.style.top=my+'px'; rx+=(mx-rx)*.12; ry+=(my-ry)*.12; cr.style.left=rx+'px'; cr.style.top=ry+'px'; requestAnimationFrame(ac); })();
+document.querySelectorAll('a,button,.cc,.sc,.dot').forEach(el => {
+  el.addEventListener('mouseenter', () => { cr.style.width='56px'; cr.style.height='56px'; cr.style.borderColor='rgba(2,215,250,.6)'; });
+  el.addEventListener('mouseleave', () => { cr.style.width='36px'; cr.style.height='36px'; cr.style.borderColor='rgba(2,215,250,.4)'; });
+});
+
+// ─── Scroll reveal ───
+const rv = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }); }, {threshold:.1});
+rv.forEach(r => ro.observe(r));
+
+// ─── Nav scroll ───
+window.addEventListener('scroll', () => {
+  document.getElementById('mnav').style.borderBottomColor = window.scrollY > 60 ? 'rgba(2,215,250,.22)' : 'rgba(2,215,250,.1)';
+});
+
+// ─── Mobile nav ───
+function tnav() {
+  const ul = document.querySelector('.nav-links');
+  if (ul.style.display === 'flex') { ul.style.display = 'none'; }
+  else { ul.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(0,0,0,.97);padding:20px;gap:0;border-bottom:1px solid rgba(2,215,250,.15);z-index:999'; }
+}
+
+// ─── Believe ───
+const phrases = [
+  'Não é a tecnologia que define o futuro — é quem tem a coragem de usá-la de verdade.',
+  'A melhor versão do seu produto ainda não existe. Vamos construir juntos.',
+  'Do papel à peça, do esquemático ao sistema: a MYND transforma visão em realidade tangível.',
+  'Precisão não é detalhe. Precisão é o produto.'
+];
+let bc = 0;
+const btxt = document.getElementById('bt'), bdts = document.querySelectorAll('.dot');
+function sb(i) {
+  bc = i; btxt.style.opacity='0'; btxt.style.transform='translateY(14px)';
+  setTimeout(() => { btxt.textContent=phrases[i]; btxt.style.transition='opacity .45s,transform .45s'; btxt.style.opacity='1'; btxt.style.transform='translateY(0)'; }, 320);
+  bdts.forEach((d,j) => d.classList.toggle('active', j===i));
+}
+bdts.forEach(d => d.addEventListener('click', () => sb(+d.dataset.i)));
+setInterval(() => sb((bc+1) % phrases.length), 4200);
 </script>
 </body>
 </html>
