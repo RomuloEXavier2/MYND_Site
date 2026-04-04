@@ -7,7 +7,6 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-<!-- ElevenLabs Conversational AI Widget -->
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 <style>
 :root{--black:#000;--cyan:#02d7fa;--navy:#022440;--white:#fff;--cyan-dim:rgba(2,215,250,.12);--cyan-glow:rgba(2,215,250,.4);--dark:#060d15;--card:#07101a;--gray:#7a8fa8;--green:#25D366}
@@ -17,17 +16,8 @@ body{background:var(--black);color:var(--white);font-family:'Rajdhani',sans-seri
 .cring{position:fixed;width:36px;height:36px;border:1px solid rgba(2,215,250,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:#000}::-webkit-scrollbar-thumb{background:var(--cyan)}
 
-/* ─── ElevenLabs widget override — match MYND identity ─── */
-elevenlabs-convai{
-  --el-widget-button-size: 56px;
-  --el-widget-z-index: 1400;
-  position: fixed;
-  bottom: 28px;
-  left: 28px;
-  z-index: 1400;
-}
+elevenlabs-convai{--el-widget-button-size:56px;--el-widget-z-index:1400;position:fixed;bottom:28px;left:28px;z-index:1400}
 
-/* ─── NAV ─── */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(2,215,250,.1);transition:border-color .3s}
 .nl{display:flex;align-items:center;gap:12px;text-decoration:none}
 .nl svg{width:38px;height:38px}.nn{font-family:'Orbitron',monospace;font-size:20px;font-weight:700;letter-spacing:4px;color:#fff}
@@ -46,7 +36,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .hburg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
 .hburg span{width:22px;height:2px;background:#fff;display:block}
 
-/* ─── HERO ─── */
 #hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:68px}
 .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(2,215,250,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(2,215,250,.04) 1px,transparent 1px);background-size:56px 56px;animation:gp 8s ease-in-out infinite}
 @keyframes gp{0%,100%{opacity:.5}50%{opacity:1}}
@@ -75,14 +64,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 @keyframes fup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fi{from{opacity:0}to{opacity:1}}
 
-/* ─── TECH STRIP ─── */
 .tech-strip{background:var(--dark);border-top:1px solid rgba(2,215,250,.07);border-bottom:1px solid rgba(2,215,250,.07);padding:18px 0;overflow:hidden}
 .tech-track{display:flex;gap:48px;align-items:center;animation:scroll-x 22s linear infinite;white-space:nowrap;width:max-content;padding:0 48px}
 .tech-track span{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:3px;color:rgba(2,215,250,.35);text-transform:uppercase}
 .tech-track .sep{color:rgba(2,215,250,.15)}
 @keyframes scroll-x{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ─── COMMON ─── */
 .sec{padding:96px 48px}.si{max-width:1380px;margin:0 auto}
 .slbl{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:5px;color:var(--cyan);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .slbl::before{content:'';width:28px;height:1px;background:var(--cyan)}
@@ -90,7 +77,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .sdesc{font-size:16px;font-weight:300;color:var(--gray);line-height:1.75;max-width:500px}
 .srule{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
 
-/* ─── SERVICES ─── */
 .shdr{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px}
 .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
 .sc{background:var(--card);padding:44px 34px;border:1px solid rgba(2,215,250,.05);position:relative;overflow:hidden;transition:all .3s;cursor:pointer}
@@ -105,7 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .sc-cta{margin-top:24px;display:inline-flex;align-items:center;gap:6px;font-family:'Orbitron',monospace;font-size:10px;font-weight:600;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;transition:gap .2s}
 .sc:hover .sc-cta{gap:10px}.sc-cta::after{content:'→'}
 
-/* ─── SERVICE CATALOG MODAL ─── */
+/* ── SERVICE CATALOG MODAL ── */
 .svc-overlay{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.93);backdrop-filter:blur(14px);align-items:center;justify-content:center;padding:20px}
 .svc-overlay.open{display:flex}
 .svc-box{background:var(--dark);border:1px solid rgba(2,215,250,.2);border-top:2px solid var(--cyan);max-width:960px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:mopn .3s ease}
@@ -120,7 +106,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .svc-prod{background:var(--card);border:1px solid rgba(2,215,250,.06);cursor:pointer;transition:all .3s;overflow:hidden}
 .svc-prod:hover{border-color:rgba(2,215,250,.25);background:#0a1520}
 .svc-prod-thumb{width:100%;aspect-ratio:4/3;overflow:hidden;background:#050c14;display:flex;align-items:center;justify-content:center;position:relative}
-/* ✅ FIX: catalog thumb image — always centered and covered */
 .svc-prod-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .4s}
 .svc-prod:hover .svc-prod-thumb img{transform:scale(1.06)}
 .svc-prod-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
@@ -130,7 +115,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .svc-prod-name{font-family:'Orbitron',monospace;font-size:13px;font-weight:700;margin-bottom:6px}
 .svc-prod-mat{font-size:12px;color:var(--gray);letter-spacing:.5px}
 
-/* ─── PRODUCT DETAIL MODAL ─── */
+/* ── PRODUCT DETAIL MODAL ── */
 .prod-overlay{display:none;position:fixed;inset:0;z-index:4000;background:rgba(0,0,0,.93);backdrop-filter:blur(14px);align-items:center;justify-content:center;padding:20px}
 .prod-overlay.open{display:flex}
 .prod-box{background:var(--dark);border:1px solid rgba(2,215,250,.2);border-top:2px solid var(--cyan);max-width:880px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:mopn .3s ease}
@@ -138,71 +123,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .prod-close:hover{color:var(--cyan)}
 .prod-inner{display:grid;grid-template-columns:1fr 1fr;min-height:0}
 .prod-carousel{position:relative;background:#040b12;border-right:1px solid rgba(2,215,250,.08);overflow:hidden}
-
-/* ✅ FIX: carousel container — fixed square, clips overflow */
-.prod-slides-wrap{
-  width:100%;
-  aspect-ratio:1/1;
-  overflow:hidden;
-  position:relative;
-}
-.prod-slides{
-  display:flex;
-  width:100%;
-  height:100%;
-  transition:transform .45s cubic-bezier(.4,0,.2,1);
-  will-change:transform;
-}
-.prod-slide{
-  min-width:100%;
-  width:100%;
-  height:100%;
-  flex-shrink:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  background:#040b12;
-  position:relative;
-}
-/* Procure por isso no seu CSS: */
-.prod-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Mude de 'cover' para 'contain' */
-  object-position: center;
-  display: block;
-  background: #040b12; /* Cor de fundo para preencher os espaços vazios se a foto for menor que o quadrado */
-}
-.prod-slide model-viewer{
-  width:100%;
-  height:100%;
-  display:block;
-  background:#040b12;
-  --poster-color:transparent;
-}
-.prod-3d-hint{
-  position:absolute;
-  bottom:52px;
-  left:50%;
-  transform:translateX(-50%);
-  font-family:'Share Tech Mono',monospace;
-  font-size:9px;
-  color:rgba(2,215,250,.5);
-  letter-spacing:1.5px;
-  white-space:nowrap;
-  pointer-events:none;
-  background:rgba(0,0,0,.5);
-  padding:3px 10px;
-  display:none;
-  z-index:3;
-}
-
+.prod-slides-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;position:relative}
+.prod-slides{display:flex;width:100%;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform}
+.prod-slide{min-width:100%;width:100%;height:100%;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#040b12;position:relative}
+.prod-slide img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;background:#040b12}
 .prod-slide model-viewer{width:100%;height:100%;display:block;background:#040b12;--poster-color:transparent}
-.prod-slide-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:20px}
-.prod-slide-ph svg{width:52px;height:52px;opacity:.2}
-.prod-slide-ph p{font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(2,215,250,.3);letter-spacing:2px;text-align:center;line-height:1.9}
-.prod-3d-hint{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(2,215,250,.4);letter-spacing:1.5px;white-space:nowrap;pointer-events:none;display:none}
+
+/* ── SLIDE DE SIMULAÇÃO DRL ── */
+.prod-slide.drl-slide{overflow:hidden;display:block;padding:0}
+.drl-sim-wrap{width:100%;height:100%;overflow:hidden;position:relative;background:#060d15}
+.drl-sim-wrap canvas{display:block}
+/* Tabs dentro do carrossel para a simulação DRL */
+.drl-tab-bar{display:flex;gap:1px;background:#040b12;border-bottom:1px solid rgba(2,215,250,.15);flex-wrap:wrap}
+.drl-tab{flex:1;min-width:0;padding:7px 4px;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(2,215,250,.4);text-align:center;cursor:pointer;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.drl-tab.active{color:var(--cyan);border-bottom-color:var(--cyan);background:rgba(2,215,250,.04)}
+.drl-tab:hover:not(.active){color:rgba(2,215,250,.7)}
+.drl-pane{display:none;width:100%;height:calc(100% - 37px);overflow:hidden}
+.drl-pane.active{display:flex;flex-direction:column}
+.drl-canvas-wrap{flex:1;position:relative;overflow:hidden;min-height:0}
+.drl-canvas-wrap canvas{width:100%!important;height:100%!important;display:block}
+.drl-chips{display:flex;gap:4px;padding:4px 8px;background:#040b12;border-top:1px solid rgba(2,215,250,.08);flex-wrap:wrap;flex-shrink:0}
+.drl-chip{background:rgba(2,215,250,.05);border:0.5px solid rgba(2,215,250,.15);border-radius:4px;padding:2px 7px;font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(2,215,250,.5)}
+.drl-chip b{color:rgba(2,215,250,.9);font-weight:500}
+.drl-ctrl{display:flex;gap:5px;padding:4px 8px;background:#040b12;border-top:1px solid rgba(2,215,250,.08);align-items:center;flex-shrink:0;flex-wrap:wrap}
+.drl-btn{background:rgba(2,215,250,.05);border:0.5px solid rgba(2,215,250,.2);border-radius:4px;padding:3px 9px;font-size:10px;color:rgba(2,215,250,.8);cursor:pointer;font-family:'Share Tech Mono',monospace}
+.drl-btn:hover{background:rgba(2,215,250,.12)}
+.drl-lbl{font-size:9px;color:rgba(2,215,250,.4);font-family:'Share Tech Mono',monospace;display:flex;align-items:center;gap:4px}
+
+.prod-3d-hint{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(2,215,250,.5);letter-spacing:1.5px;white-space:nowrap;pointer-events:none;background:rgba(0,0,0,.5);padding:3px 10px;display:none;z-index:3}
 .prod-nav{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
 .prod-nav-btn{width:8px;height:8px;border-radius:50%;background:rgba(2,215,250,.2);cursor:pointer;transition:.2s;border:none;padding:0;display:block}
 .prod-nav-btn.active{background:var(--cyan);box-shadow:0 0 6px var(--cyan)}
@@ -223,7 +171,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .prod-wa svg{width:18px;height:18px;fill:#000;flex-shrink:0}
 @media(max-width:680px){.prod-inner{grid-template-columns:1fr}.prod-carousel{border-right:none;border-bottom:1px solid rgba(2,215,250,.08)}}
 
-/* ─── BELIEVE ─── */
 #believe{background:var(--black);padding:110px 48px;text-align:center;position:relative;overflow:hidden}
 #believe::before{content:'MYND';position:absolute;font-family:'Orbitron',monospace;font-size:260px;font-weight:900;color:rgba(2,215,250,.018);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;letter-spacing:36px;white-space:nowrap}
 .bw{position:relative;z-index:2}.bp2{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:5px;color:var(--cyan);margin-bottom:28px}
@@ -232,14 +179,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.18);cursor:pointer;transition:.2s}
 .dot.active{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
 
-/* ─── CASES ─── */
 .chdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
 .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
 .cc{background:var(--card);border:1px solid rgba(2,215,250,.06);cursor:pointer;position:relative;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
 .cc:hover{border-color:rgba(2,215,250,.25);background:#0a1520}
 .cc.feat{grid-column:span 2}
 .cthumb{width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:#050c14}
-/* ✅ FIX: case card thumb — always centered */
 .cthumb img,.cthumb .cgif{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s}
 .cc:hover .cthumb img{transform:scale(1.05)}
 .cph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#060e18,#091524);position:absolute;top:0;left:0}
@@ -259,13 +204,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 48px;
 .ccta{font-family:'Orbitron',monospace;font-size:10px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:6px;white-space:nowrap;transition:gap .2s}
 .cc:hover .ccta{gap:10px}.ccta::after{content:'→'}
 
-/* ─── CASE MODAL ─── */
 .moverlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px}
 .moverlay.open{display:flex}
 .mbox{background:var(--dark);border:1px solid rgba(2,215,250,.2);border-top:2px solid var(--cyan);max-width:920px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:mopn .3s ease}
 .mclose{position:absolute;top:14px;right:18px;font-size:22px;color:var(--gray);cursor:pointer;font-family:'Orbitron',monospace;font-weight:700;transition:color .2s;z-index:1;line-height:1}
 .mclose:hover{color:var(--cyan)}
-/* ✅ FIX: modal header image — always centered */
 .mimg{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block;border-bottom:1px solid rgba(2,215,250,.1)}
 .mgif{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block;border-bottom:1px solid rgba(2,215,250,.1)}
 .miph{width:100%;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg,#040b12,#081422);border-bottom:1px solid rgba(2,215,250,.1)}
@@ -293,7 +236,6 @@ model-viewer{width:100%;aspect-ratio:16/9;background:#040b12;border-bottom:1px s
 .mwa{padding:10px 22px;background:var(--green);color:#000;font-family:'Orbitron',monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%);transition:all .2s;display:inline-flex;align-items:center;gap:8px}
 .mwa:hover{background:#1ebe5d}
 
-/* ─── ABOUT ─── */
 .agrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .avis{position:relative}
 .acube{display:flex;align-items:center;justify-content:center;padding:20px}
@@ -307,7 +249,6 @@ model-viewer{width:100%;aspect-ratio:16/9;background:#040b12;border-bottom:1px s
 .alist li{padding:13px 0;border-bottom:1px solid rgba(2,215,250,.07);display:flex;align-items:center;gap:14px;font-size:15px;color:rgba(255,255,255,.8)}
 .alist li::before{content:'▸';color:var(--cyan);font-size:11px;flex-shrink:0}
 
-/* ─── INSIGHTS ─── */
 .ihdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px}
 .igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
 .ic{background:var(--card);padding:30px 26px;border:1px solid rgba(2,215,250,.05);transition:all .3s}
@@ -318,7 +259,6 @@ model-viewer{width:100%;aspect-ratio:16/9;background:#040b12;border-bottom:1px s
 .ibod{font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:18px}
 .idate{font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(255,255,255,.25);letter-spacing:2px}
 
-/* ─── CONTACT ─── */
 #contact{background:var(--black);padding:96px 48px;text-align:center;position:relative;overflow:hidden}
 #contact::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
 .cglow{position:absolute;width:700px;height:350px;background:radial-gradient(ellipse,rgba(2,215,250,.05) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
@@ -336,7 +276,6 @@ model-viewer{width:100%;aspect-ratio:16/9;background:#040b12;border-bottom:1px s
 .csoc-link svg{width:18px;height:18px;fill:currentColor}
 .csoc-email{padding:10px 22px;width:auto;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px;gap:8px}
 
-/* ─── FOOTER ─── */
 footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2,215,250,.08)}
 .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;max-width:1380px;margin:0 auto 40px}
 .flogo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
@@ -356,35 +295,19 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
 .fbot{max-width:1380px;margin:0 auto;padding-top:20px;border-top:1px solid rgba(2,215,250,.06);display:flex;justify-content:center;align-items:center}
 .fcopy{font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(255,255,255,.2);letter-spacing:2px;text-align:center}
 
-/* ─── WA FLOAT ─── */
 .wafloat{position:fixed;bottom:28px;right:28px;z-index:1500;width:58px;height:58px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;transition:all .25s;text-decoration:none}
 .wafloat:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,.6)}
 .wafloat svg{width:30px;height:30px;fill:#fff}
 .waflbl{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.85);border:1px solid rgba(37,211,102,.3);padding:6px 14px;white-space:nowrap;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--green);letter-spacing:1.5px;opacity:0;transition:opacity .2s;pointer-events:none;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
 .wafloat:hover .waflbl{opacity:1}
 
-/* ─── AGENT LABEL (above ElevenLabs widget) ─── */
-.agent-label{
-  position:fixed;
-  bottom:96px;
-  left:28px;
-  z-index:1400;
-  font-family:'Share Tech Mono',monospace;
-  font-size:9px;
-  color:rgba(2,215,250,.5);
-  letter-spacing:2px;
-  text-transform:uppercase;
-  pointer-events:none;
-  animation:agentPulse 3s ease-in-out infinite;
-}
+.agent-label{position:fixed;bottom:96px;left:28px;z-index:1400;font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(2,215,250,.5);letter-spacing:2px;text-transform:uppercase;pointer-events:none;animation:agentPulse 3s ease-in-out infinite}
 @keyframes agentPulse{0%,100%{opacity:.4}50%{opacity:.9}}
 
-/* ─── REVEAL ─── */
 .reveal{opacity:0;transform:translateY(36px);transition:opacity .65s,transform .65s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}.rd5{transition-delay:.5s}
 
-/* ─── RESPONSIVE ─── */
 @media(max-width:1100px){
   .sgrid,.cgrid{grid-template-columns:1fr 1fr}
   .cc.feat{grid-column:span 2}
@@ -410,19 +333,14 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
 <div class="cursor" id="cursor"></div>
 <div class="cring" id="cring"></div>
 
-<!-- ══ ELEVENLABS CONVERSATIONAL AI AGENT ══
-     Positioned bottom-left (opposite to WhatsApp on the right)
-     Label above it to invite interaction -->
 <div class="agent-label">⬡ Assistente MYND</div>
 <elevenlabs-convai agent-id="agent_0301kn89cvg3e3qs86en73jf77dq"></elevenlabs-convai>
 
-<!-- WA FLOAT (bottom-right) -->
 <a class="wafloat" href="https://wa.me/5511942575063?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20MYND%20e%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener">
   <span class="waflbl">Orçamento via WhatsApp</span>
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<!-- NAV -->
 <nav id="mnav">
   <a href="#" class="nl">
     <svg viewBox="0 0 100 100" fill="none"><polygon points="50,5 90,28 90,72 50,95 10,72 10,28" fill="none" stroke="#022440" stroke-width="2.5"/><polygon points="50,5 90,28 90,72 50,95 10,72 10,28" fill="none" stroke="#02d7fa" stroke-width="1.5" opacity=".75"/><line x1="50" y1="5" x2="50" y2="50" stroke="#02d7fa" stroke-width="1" opacity=".5"/><line x1="90" y1="28" x2="50" y2="50" stroke="#02d7fa" stroke-width="1" opacity=".5"/><line x1="10" y1="28" x2="50" y2="50" stroke="#02d7fa" stroke-width="1" opacity=".5"/><circle cx="50" cy="50" r="6" fill="#02d7fa"/></svg>
@@ -451,7 +369,6 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   <div class="hburg" onclick="tnav()"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="avail-badge"><span class="avail-dot"></span>Disponível para novos projetos</div>
   <div class="hgrid"></div><div class="hrad"></div>
@@ -470,7 +387,6 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   <div class="hscroll"><span>Scroll</span><div class="sbar"></div></div>
 </section>
 
-<!-- TECH STRIP -->
 <div class="tech-strip">
   <div class="tech-track">
     <span>C++</span><span class="sep">·</span><span>React</span><span class="sep">·</span><span>Firebase</span><span class="sep">·</span><span>Python</span><span class="sep">·</span><span>FDM / SLA</span><span class="sep">·</span><span>PCB Design</span><span class="sep">·</span><span>CNC Routing</span><span class="sep">·</span><span>TypeScript</span><span class="sep">·</span><span>Supabase</span><span class="sep">·</span><span>LLM / RAG</span><span class="sep">·</span><span>IoT</span><span class="sep">·</span><span>RFID</span><span class="sep">·</span><span>Three.js</span><span class="sep">·</span><span>ESP32</span><span class="sep">·</span><span>Tailwind CSS</span><span class="sep">·</span>
@@ -478,7 +394,6 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   </div>
 </div>
 
-<!-- SERVICES -->
 <section id="services" class="sec" style="background:var(--dark);position:relative;">
   <div class="srule"></div>
   <div class="si">
@@ -515,7 +430,6 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   </div>
 </section>
 
-<!-- BELIEVE -->
 <section id="believe">
   <div class="bw">
     <p class="bp2">// MYND ACREDITA</p>
@@ -524,7 +438,6 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   </div>
 </section>
 
-<!-- CASES -->
 <section id="cases" class="sec" style="background:var(--dark);position:relative;">
   <div class="srule"></div>
   <div class="si">
@@ -533,110 +446,38 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
       <a href="https://wa.me/5511942575063?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20MYND%20e%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener" class="bo reveal rd2">💬 Solicitar Orçamento</a>
     </div>
     <div class="cgrid" id="cgrid">
-
       <div class="cc feat reveal" data-cat="hardware" onclick="om('digitalTwin')">
-        <div class="cthumb">
-          <img src="assets/DigitalTwin.png" alt="Digital Twin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="8" y="8" width="40" height="40" stroke="#02d7fa" stroke-width="1.5"/><circle cx="28" cy="28" r="8" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div>
-          <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="cbody">
-          <div class="ccat">Hardware · C++ · Firebase</div>
-          <h3 class="ctit">Digital Twin — Gêmeo Digital com Sensoriamento em Tempo Real</h3>
-          <p class="cdesc">Sistema que sincroniza dados de sensor inercial MPU com Firebase, renderizando modelo 3D interativo no browser em tempo real.</p>
-          <div class="cfoot"><div class="ctechs"><span>C++</span><span>Firebase</span><span>HTML/JS</span><span>3D GLB</span></div><span class="ccta">Ver projeto</span></div>
-        </div>
+        <div class="cthumb"><img src="assets/DigitalTwin.png" alt="Digital Twin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="8" y="8" width="40" height="40" stroke="#02d7fa" stroke-width="1.5"/><circle cx="28" cy="28" r="8" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div><div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="cbody"><div class="ccat">Hardware · C++ · Firebase</div><h3 class="ctit">Digital Twin — Gêmeo Digital com Sensoriamento em Tempo Real</h3><p class="cdesc">Sistema que sincroniza dados de sensor inercial MPU com Firebase, renderizando modelo 3D interativo no browser em tempo real.</p><div class="cfoot"><div class="ctechs"><span>C++</span><span>Firebase</span><span>HTML/JS</span><span>3D GLB</span></div><span class="ccta">Ver projeto</span></div></div>
       </div>
-
       <div class="cc reveal rd1" data-cat="hardware" onclick="om('roboticaSub')">
-        <div class="cthumb">
-          <img src="assets/ROV.jpg" alt="ROV" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><ellipse cx="28" cy="28" rx="20" ry="12" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div>
-          <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="cbody">
-          <div class="ccat">Hardware · Robótica</div>
-          <h3 class="ctit">Robótica Subaquática — ROV de Exploração</h3>
-          <p class="cdesc">ROV subaquático com controle via interface web, sensor de profundidade e câmera embarcada com transmissão ao vivo.</p>
-          <div class="cfoot"><div class="ctechs"><span>HTML</span><span>Embarcado</span><span>ROV</span></div><span class="ccta">Ver projeto</span></div>
-        </div>
+        <div class="cthumb"><img src="assets/ROV.jpg" alt="ROV" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><ellipse cx="28" cy="28" rx="20" ry="12" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div><div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="cbody"><div class="ccat">Hardware · Robótica</div><h3 class="ctit">Robótica Subaquática — ROV de Exploração</h3><p class="cdesc">ROV subaquático com controle via interface web, sensor de profundidade e câmera embarcada com transmissão ao vivo.</p><div class="cfoot"><div class="ctechs"><span>HTML</span><span>Embarcado</span><span>ROV</span></div><span class="ccta">Ver projeto</span></div></div>
       </div>
-
       <div class="cc reveal rd2" data-cat="software" onclick="om('myndFinance')">
-        <div class="cthumb">
-          <img src="assets/MyndFinance.png" alt="MYND Finance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="6" y="14" width="44" height="28" rx="3" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div>
-          <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="cbody">
-          <div class="ccat">Software · FinTech · React</div>
-          <h3 class="ctit">MYND Finance — Gestão Financeira com IA</h3>
-          <p class="cdesc">App full-stack com React, TypeScript e Supabase. Dashboard interativo, análise de despesas e integração com IA para insights preditivos.</p>
-          <div class="cfoot"><div class="ctechs"><span>React</span><span>TypeScript</span><span>Supabase</span></div><span class="ccta">Ver projeto</span></div>
-        </div>
+        <div class="cthumb"><img src="assets/MyndFinance.png" alt="MYND Finance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="6" y="14" width="44" height="28" rx="3" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div><div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="cbody"><div class="ccat">Software · FinTech · React</div><h3 class="ctit">MYND Finance — Gestão Financeira com IA</h3><p class="cdesc">App full-stack com React, TypeScript e Supabase. Dashboard interativo, análise de despesas e integração com IA para insights preditivos.</p><div class="cfoot"><div class="ctechs"><span>React</span><span>TypeScript</span><span>Supabase</span></div><span class="ccta">Ver projeto</span></div></div>
       </div>
-
       <div class="cc reveal rd3" data-cat="hardware" onclick="om('accessControl')">
-        <div class="cthumb">
-          <img src="assets/AccessControl.jpg" alt="Access Control" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="18" y="22" width="20" height="24" rx="2" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div>
-          <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="cbody">
-          <div class="ccat">Hardware · IoT · Segurança</div>
-          <h3 class="ctit">MYND Access Control — Controle de Acesso Inteligente</h3>
-          <p class="cdesc">Sistema com RFID, biometria e painel web. Logs em tempo real, controle por perfil e integração com câmeras IP.</p>
-          <div class="cfoot"><div class="ctechs"><span>IoT</span><span>RFID</span><span>Embarcado</span></div><span class="ccta">Ver projeto</span></div>
-        </div>
+        <div class="cthumb"><img src="assets/AccessControl.jpg" alt="Access Control" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="18" y="22" width="20" height="24" rx="2" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div><div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="cbody"><div class="ccat">Hardware · IoT · Segurança</div><h3 class="ctit">MYND Access Control — Controle de Acesso Inteligente</h3><p class="cdesc">Sistema com RFID, biometria e painel web. Logs em tempo real, controle por perfil e integração com câmeras IP.</p><div class="cfoot"><div class="ctechs"><span>IoT</span><span>RFID</span><span>Embarcado</span></div><span class="ccta">Ver projeto</span></div></div>
       </div>
-
       <div class="cc reveal rd4" data-cat="software" onclick="om('auditorBot')">
-        <div class="cthumb">
-          <img src="assets/AuditorBot.jpg" alt="Auditor Bot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="14" y="10" width="28" height="36" rx="3" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div>
-          <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="cbody">
-          <div class="ccat">Software · IA · Automação</div>
-          <h3 class="ctit">Auditor Bot — Agente de IA para Auditoria Automatizada</h3>
-          <p class="cdesc">Agente que audita documentos, contratos e dados financeiros. Gera relatórios com inconsistências, riscos e score de conformidade.</p>
-          <div class="cfoot"><div class="ctechs"><span>Python</span><span>LLM</span><span>Automação</span></div><span class="ccta">Ver projeto</span></div>
-        </div>
+        <div class="cthumb"><img src="assets/AuditorBot.jpg" alt="Auditor Bot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="14" y="10" width="28" height="36" rx="3" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div><div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="cbody"><div class="ccat">Software · IA · Automação</div><h3 class="ctit">Auditor Bot — Agente de IA para Auditoria Automatizada</h3><p class="cdesc">Agente que audita documentos, contratos e dados financeiros. Gera relatórios com inconsistências, riscos e score de conformidade.</p><div class="cfoot"><div class="ctechs"><span>Python</span><span>LLM</span><span>Automação</span></div><span class="ccta">Ver projeto</span></div></div>
       </div>
-
       <div class="cc reveal rd5" data-cat="software" onclick="om('academicAssistant')">
-        <div class="cthumb">
-          <img src="assets/AcademicAssistant.jpg" alt="Academic Assistant" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><polygon points="28,6 50,18 50,38 28,50 6,38 6,18" fill="none" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div>
-          <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="cbody">
-          <div class="ccat">Software · IA · Educação</div>
-          <h3 class="ctit">Academic Assistant — Assistente Educacional com IA Generativa</h3>
-          <p class="cdesc">Assistente para estudantes: gera resumos, explica conceitos, revisa trabalhos e sugere referências bibliográficas com RAG.</p>
-          <div class="cfoot"><div class="ctechs"><span>Python</span><span>LLM</span><span>RAG</span></div><span class="ccta">Ver projeto</span></div>
-        </div>
+        <div class="cthumb"><img src="assets/AcademicAssistant.jpg" alt="Academic Assistant" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><polygon points="28,6 50,18 50,38 28,50 6,38 6,18" fill="none" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div><div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="cbody"><div class="ccat">Software · IA · Educação</div><h3 class="ctit">Academic Assistant — Assistente Educacional com IA Generativa</h3><p class="cdesc">Assistente para estudantes: gera resumos, explica conceitos, revisa trabalhos e sugere referências bibliográficas com RAG.</p><div class="cfoot"><div class="ctechs"><span>Python</span><span>LLM</span><span>RAG</span></div><span class="ccta">Ver projeto</span></div></div>
       </div>
-
       <div class="cc reveal rd2" data-cat="software" onclick="om('industrialMonitor')">
-        <div class="cthumb">
-          <img src="assets/IndustrialMonitor.jpg" alt="Industrial Monitor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="4" y="10" width="48" height="30" rx="2" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div>
-          <div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="cbody">
-          <div class="ccat">Software · Monitoramento Industrial</div>
-          <h3 class="ctit">MYND Monitor — Dashboard de Produção Industrial em Tempo Real</h3>
-          <p class="cdesc">Monitoramento de linha de produção com métricas ao vivo, alertas automáticos e integração IoT para plantas industriais.</p>
-          <div class="cfoot"><div class="ctechs"><span>React</span><span>IoT</span><span>Real-time</span></div><span class="ccta">Ver projeto</span></div>
-        </div>
+        <div class="cthumb"><img src="assets/IndustrialMonitor.jpg" alt="Industrial Monitor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cph" style="display:none"><svg viewBox="0 0 56 56" fill="none"><rect x="4" y="10" width="48" height="30" rx="2" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div><div class="cplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="cbody"><div class="ccat">Software · Monitoramento Industrial</div><h3 class="ctit">MYND Monitor — Dashboard de Produção Industrial em Tempo Real</h3><p class="cdesc">Monitoramento de linha de produção com métricas ao vivo, alertas automáticos e integração IoT para plantas industriais.</p><div class="cfoot"><div class="ctechs"><span>React</span><span>IoT</span><span>Real-time</span></div><span class="ccta">Ver projeto</span></div></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="sec">
   <div class="si">
     <div class="agrid">
@@ -666,7 +507,6 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   </div>
 </section>
 
-<!-- INSIGHTS -->
 <section id="insights" class="sec" style="background:var(--dark);position:relative;">
   <div class="srule"></div>
   <div class="si">
@@ -683,7 +523,6 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="cglow"></div>
   <div class="cin">
@@ -704,7 +543,6 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="fgrid">
     <div>
@@ -712,20 +550,18 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
       <p class="ftag">Make Your New Dreams</p>
       <p class="fdesc">Tecnologia de precisão para quem pensa grande. Hardware, eletrônica e software integrados em soluções que antes não existiam.</p>
       <div class="f-socials">
-        <a href="https://www.instagram.com/mynd_3d/" target="_blank" class="fsoc-a" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-        <a href="https://www.tiktok.com/@be_mynd" target="_blank" class="fsoc-a" title="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.21 8.21 0 004.79 1.52V6.75a4.85 4.85 0 01-1.02-.06z"/></svg></a>
-        <a href="https://www.facebook.com/profile.php?id=61584016003117" target="_blank" class="fsoc-a" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-        <a href="https://wa.me/5511942575063" target="_blank" class="fsoc-a" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-        <a href="mailto:bemyndstore@gmail.com" class="fsoc-a" title="E-mail"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+        <a href="https://www.instagram.com/mynd_3d/" target="_blank" class="fsoc-a"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.tiktok.com/@be_mynd" target="_blank" class="fsoc-a"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.21 8.21 0 004.79 1.52V6.75a4.85 4.85 0 01-1.02-.06z"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61584016003117" target="_blank" class="fsoc-a"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://wa.me/5511942575063" target="_blank" class="fsoc-a"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="mailto:bemyndstore@gmail.com" class="fsoc-a"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
       </div>
     </div>
     <div class="fcol"><h4>Serviços</h4><ul><li><a href="#services" onclick="openSvc('print3d')">Impressão 3D</a></li><li><a href="#services" onclick="openSvc('pcb')">Fabricação PCB</a></li><li><a href="#services" onclick="openSvc('software')">Desenvolvimento Web</a></li><li><a href="#services" onclick="openSvc('software')">Dashboards & IA</a></li></ul></div>
     <div class="fcol"><h4>Empresa</h4><ul><li><a href="#about">Sobre a MYND</a></li><li><a href="#cases">Portfólio</a></li><li><a href="#insights">Insights</a></li><li><a href="#contact">Contato</a></li></ul></div>
     <div class="fcol"><h4>Legal</h4><ul><li><a href="#">Política de Privacidade</a></li><li><a href="#">Termos de Uso</a></li><li><a href="#">LGPD</a></li></ul></div>
   </div>
-  <div class="fbot">
-    <span class="fcopy">© 2025 MYND — Make Your New Dreams. Todos os direitos reservados.</span>
-  </div>
+  <div class="fbot"><span class="fcopy">© 2025 MYND — Make Your New Dreams. Todos os direitos reservados.</span></div>
 </footer>
 
 <!-- SERVICE CATALOG MODAL -->
@@ -747,14 +583,14 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
     <div class="prod-close" onclick="closeProd()">✕</div>
     <div class="prod-inner">
       <div class="prod-carousel">
-  <div class="prod-slides-wrap">
-    <div class="prod-slides" id="prodSlides"></div>
-  </div>
-  <button class="prod-arr prev" onclick="prodPrev()">‹</button>
-  <button class="prod-arr next" onclick="prodNext()">›</button>
-  <div class="prod-nav" id="prodNav"></div>
-  <div class="prod-3d-hint" id="prod3dHint">🖱 Arraste para girar · Scroll para zoom</div>
-</div>
+        <div class="prod-slides-wrap">
+          <div class="prod-slides" id="prodSlides"></div>
+        </div>
+        <button class="prod-arr prev" onclick="prodPrev()">‹</button>
+        <button class="prod-arr next" onclick="prodNext()">›</button>
+        <div class="prod-nav" id="prodNav"></div>
+        <div class="prod-3d-hint" id="prod3dHint">🖱 Arraste para girar · Scroll para zoom</div>
+      </div>
       <div class="prod-info">
         <div class="prod-info-cat" id="prodCat"></div>
         <h3 class="prod-info-name" id="prodName"></h3>
@@ -781,13 +617,334 @@ footer{background:var(--dark);padding:52px 48px 28px;border-top:1px solid rgba(2
   </div>
 </div>
 
+<!-- THREE.JS para simulação DRL -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 <script>
-// ══ SERVICE CATALOG DATA ══
+// ══════════════════════════════════════════════════════════════
+//  SIMULAÇÃO DRL — Motor interno (não renderiza até ser chamado)
+// ══════════════════════════════════════════════════════════════
+const DRL = (() => {
+  const PALLET_W=5,PALLET_D=5,MAX_H=5,MAX_BOXES=60,LOOKAHEAD_K=10;
+  const ACTION_SIZE=PALLET_W*PALLET_D*MAX_H;
+  const EPSILON_DECAY=0.99995,EPSILON_MIN=0.01;
+  const BOX_COLORS=[0x4A90D9,0x5BBF8A,0xF0A030,0xD05050,0x9B59B6,0x1ABC9C,0xE67E22,0xE74C3C,0x3498DB,0x2ECC71,0xF39C12,0x8E44AD];
+  const NN_LAYERS=[5,8,8,6,5];
+
+  let paused=false,speed=5,episode=1,epStep=0,epReward=0,totalBoxes=0;
+  let epsilon=1.0,currentLoss=0,learnStep=0,lastAction=4;
+  let qVals=new Float32Array(8).fill(0);
+  let nnAct=NN_LAYERS.map(n=>Array.from({length:n},()=>Math.random()));
+  const rewardHist=[],lossHist=[],avgHist=[];
+  const MAX_HIST=50;
+  let bestAvg=-Infinity,avgReward=0;
+
+  let pallet,placedBoxes,itemQueue,currentBox;
+  let renderer3d=null,scene3d=null,camera3d=null;
+  let boxMeshPool=[],agentGroup=null,armMesh=null;
+  let camAngle=0,agentT=0,actionTimer=0,episodeDone=false;
+  let raf3d=null;
+  let ctx3d=null,ctxNN=null,ctxRw=null,ctxHm=null;
+  let canvas3d=null,canvasNN=null,canvasRw=null,canvasHm=null;
+  let running=false;
+
+  function orientations(c,l,a){
+    const s=new Set();
+    [[c,l,a],[l,c,a],[c,a,l],[a,c,l],[l,a,c],[a,l,c]].forEach(o=>s.add(o.join(',')));
+    return [...s].map(x=>x.split(',').map(Number));
+  }
+  function isValid(x,y,z,bs){
+    const[bx,by,bz]=bs;
+    if(x+bx>PALLET_W||y+by>PALLET_D||z+bz>MAX_H) return false;
+    for(let i=x;i<x+bx;i++) for(let j=y;j<y+by;j++) for(let k=z;k<z+bz;k++) if(pallet[i][j][k]>0) return false;
+    if(z>0){let sup=0,tot=bx*by;for(let i=x;i<x+bx;i++) for(let j=y;j<y+by;j++) if(pallet[i][j][z-1]>0) sup++;if(sup/tot<0.7) return false;}
+    return true;
+  }
+  function resetEnv(){
+    pallet=Array.from({length:PALLET_W},()=>Array.from({length:PALLET_D},()=>new Array(MAX_H).fill(0)));
+    placedBoxes=[];epStep=0;epReward=0;
+    itemQueue=Array.from({length:MAX_BOXES},()=>[1,1,1]);
+    currentBox=itemQueue.shift()||null;
+    clearBoxMeshes();
+    updateHeatmap();
+    updateChipEp();
+  }
+  function newEpisode(){
+    episode++;if(epsilon>EPSILON_MIN) epsilon*=Math.pow(EPSILON_DECAY,20);resetEnv();updateChipEp();
+  }
+  function getValidActions(){
+    if(!currentBox) return[];
+    const valid=new Set();
+    const orients=orientations(...currentBox);
+    for(let x=0;x<PALLET_W;x++) for(let y=0;y<PALLET_D;y++) for(let z=0;z<MAX_H;z++)
+      for(const o of orients) if(isValid(x,y,z,o)){valid.add(x*(PALLET_D*MAX_H)+y*MAX_H+z);break;}
+    return[...valid];
+  }
+  function doStep(){
+    if(!currentBox) return true;
+    epStep++;
+    const valid=getValidActions();
+    if(!valid.length){epReward--;return true;}
+    let action;
+    if(Math.random()<epsilon) action=valid[Math.floor(Math.random()*valid.length)];
+    else{
+      const scores=valid.map(a=>{const z=a%MAX_H,x=Math.floor(a/(PALLET_D*MAX_H)),y=Math.floor((a%(PALLET_D*MAX_H))/MAX_H);return{a,s:100-z*10-Math.hypot(x-2,y-2)*2+Math.random()*5};});
+      scores.sort((a,b)=>b.s-a.s);action=scores[0].a;
+    }
+    lastAction=action%8;
+    const az=action%MAX_H,ay=Math.floor((action%(PALLET_D*MAX_H))/MAX_H),ax=Math.floor(action/(PALLET_D*MAX_H));
+    const orients=orientations(...currentBox);
+    let placed=null;
+    for(const o of orients) if(isValid(ax,ay,az,o)){placed=o;break;}
+    if(placed){
+      const id=placedBoxes.length+1;
+      const[bx,by,bz]=placed;
+      for(let i=ax;i<ax+bx;i++) for(let j=ay;j<ay+by;j++) for(let k=az;k<az+bz;k++) pallet[i][j][k]=id;
+      placedBoxes.push({pos:[ax,ay,az],dims:placed,id});
+      totalBoxes++;epReward+=100;
+      currentLoss=0.12*Math.exp(-episode*0.02)+Math.random()*0.03;
+      for(let i=0;i<qVals.length;i++) qVals[i]=0.3+Math.random()*0.7;
+      currentBox=itemQueue.shift()||null;
+      addBoxMesh(ax,ay,az,placed,id);
+      updateHeatmap();
+    } else { epReward--; }
+    pulseNN();
+    updateChipEp();
+    return !currentBox||placedBoxes.length>=MAX_BOXES||epStep>MAX_BOXES+50;
+  }
+
+  // ── THREE.JS ──
+  function destroyThree(){
+    if(renderer3d){renderer3d.dispose();renderer3d=null;}
+    scene3d=null;camera3d=null;agentGroup=null;armMesh=null;boxMeshPool=[];
+  }
+
+  function initThree(canvas){
+    if(!canvas) return;
+    destroyThree();
+    canvas3d=canvas;
+    renderer3d=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+    const W=canvas.clientWidth||340,H=canvas.clientHeight||320;
+    renderer3d.setSize(W,H);renderer3d.shadowMap.enabled=true;renderer3d.setClearColor(0,0);
+    scene3d=new THREE.Scene();
+    camera3d=new THREE.PerspectiveCamera(42,W/H,0.1,100);
+    camera3d.position.set(10,11,10);camera3d.lookAt(2.5,2,2.5);
+    scene3d.add(new THREE.AmbientLight(0xffffff,0.55));
+    const dl=new THREE.DirectionalLight(0xffffff,0.85);dl.position.set(10,14,8);dl.castShadow=true;scene3d.add(dl);
+    const fm=new THREE.Mesh(new THREE.BoxGeometry(5,0.08,5),new THREE.MeshPhongMaterial({color:0x888888,opacity:0.2,transparent:true}));
+    fm.position.set(2.5,-0.04,2.5);fm.receiveShadow=true;scene3d.add(fm);
+    const gh=new THREE.GridHelper(5,5,0x444444,0x333333);gh.position.set(2.5,0,2.5);scene3d.add(gh);
+    const be=new THREE.EdgesGeometry(new THREE.BoxGeometry(5,5,5));
+    const bl=new THREE.LineSegments(be,new THREE.LineBasicMaterial({color:0x4A90D9,opacity:0.22,transparent:true}));
+    bl.position.set(2.5,2.5,2.5);scene3d.add(bl);
+    agentGroup=new THREE.Group();
+    const base=new THREE.Mesh(new THREE.CylinderGeometry(0.22,0.28,0.4,10),new THREE.MeshPhongMaterial({color:0x2C3E50}));
+    armMesh=new THREE.Mesh(new THREE.BoxGeometry(0.12,1.0,0.12),new THREE.MeshPhongMaterial({color:0x4A90D9}));
+    armMesh.position.y=0.7;
+    const grip=new THREE.Mesh(new THREE.BoxGeometry(0.5,0.1,0.1),new THREE.MeshPhongMaterial({color:0x2980B9}));
+    grip.position.y=0.55;armMesh.add(grip);
+    agentGroup.add(base);agentGroup.add(armMesh);agentGroup.position.set(2.5,0.2,2.5);scene3d.add(agentGroup);
+  }
+  function clearBoxMeshes(){
+    if(!scene3d) return;
+    boxMeshPool.forEach(m=>{scene3d.remove(m);m.geometry.dispose();m.material.dispose();});
+    boxMeshPool=[];
+  }
+  function addBoxMesh(x,y,z,dims,id){
+    if(!scene3d) return;
+    const[dx,dy,dz]=dims;
+    const m=new THREE.Mesh(new THREE.BoxGeometry(dx*0.93,dz*0.93,dy*0.93),new THREE.MeshPhongMaterial({color:BOX_COLORS[(id-1)%BOX_COLORS.length],opacity:0.88,transparent:true}));
+    m.castShadow=true;m.position.set(x+dx/2,z+dz/2,y+dy/2);
+    scene3d.add(m);boxMeshPool.push(m);
+  }
+
+  // ── NN CANVAS ──
+  function initNN(canvas){canvasNN=canvas;ctxNN=canvas.getContext('2d');}
+  function pulseNN(){
+    nnAct=NN_LAYERS.map((n,l)=>Array.from({length:n},(_,i)=>{
+      if(l===NN_LAYERS.length-1) return Math.max(0,Math.min(1,(qVals[i%qVals.length]-0.3)/0.7));
+      return Math.random();
+    }));
+  }
+  function drawNN(){
+    if(!ctxNN||!canvasNN) return;
+    const W=canvasNN.width,H=canvasNN.height;
+    ctxNN.clearRect(0,0,W,H);
+    const xs=NN_LAYERS.map((_,i)=>24+i*(W-48)/(NN_LAYERS.length-1));
+    const ys=NN_LAYERS.map(n=>{const g=(H-44)/(n+1);return Array.from({length:n},(_,j)=>16+g*(j+1));});
+    const LBLS=['Input\n(38d)','H1\n256+Drop','H2\n256+Drop','H3\n128','Q-Out\n(125)'];
+    for(let l=0;l<NN_LAYERS.length-1;l++)
+      for(let a=0;a<NN_LAYERS[l];a++)
+        for(let b=0;b<NN_LAYERS[l+1];b++){
+          const w=nnAct[l][a]*nnAct[l+1][b];
+          ctxNN.beginPath();ctxNN.moveTo(xs[l],ys[l][a]);ctxNN.lineTo(xs[l+1],ys[l+1][b]);
+          ctxNN.strokeStyle=w>0.5?`rgba(2,215,250,${w*0.5})`:`rgba(200,60,60,${(1-w)*0.25})`;
+          ctxNN.lineWidth=w*1.5+0.3;ctxNN.stroke();
+        }
+    for(let l=0;l<NN_LAYERS.length;l++)
+      for(let n=0;n<NN_LAYERS[l];n++){
+        const v=nnAct[l][n];
+        ctxNN.beginPath();ctxNN.arc(xs[l],ys[l][n],8,0,Math.PI*2);
+        ctxNN.fillStyle=l===NN_LAYERS.length-1&&n===lastAction%NN_LAYERS[l]?'#F0A030':`rgba(${Math.round(2+v*30)},${Math.round(v*215)},${Math.round(v*250)},${0.4+v*0.6})`;
+        ctxNN.fill();ctxNN.strokeStyle='rgba(2,215,250,0.3)';ctxNN.lineWidth=0.5;ctxNN.stroke();
+      }
+    ctxNN.font='8px monospace';ctxNN.textAlign='center';ctxNN.fillStyle='rgba(2,215,250,0.5)';
+    LBLS.forEach((lb,i)=>lb.split('\n').forEach((l,j)=>ctxNN.fillText(l,xs[i],H-16+(j-1)*10)));
+  }
+
+  // ── REWARD CHART ──
+  function initRw(canvas){canvasRw=canvas;ctxRw=canvas.getContext('2d');}
+  function drawReward(){
+    if(!ctxRw||!canvasRw) return;
+    const W=canvasRw.width,H=canvasRw.height;
+    ctxRw.clearRect(0,0,W,H);
+    if(rewardHist.length<2) return;
+    const P={t:10,b:22,l:30,r:10};
+    const PW=W-P.l-P.r,PH=H-P.t-P.b;
+    const mn=Math.min(...rewardHist),mx=Math.max(...rewardHist);
+    for(let i=0;i<=3;i++){const y=P.t+PH*(1-i/3);ctxRw.beginPath();ctxRw.moveTo(P.l,y);ctxRw.lineTo(W-P.r,y);ctxRw.strokeStyle='rgba(2,215,250,0.07)';ctxRw.lineWidth=0.5;ctxRw.stroke();}
+    ctxRw.beginPath();
+    rewardHist.forEach((v,i)=>{const x=P.l+i*PW/(rewardHist.length-1),y=P.t+PH*(1-(v-mn)/(mx-mn+1));i?ctxRw.lineTo(x,y):ctxRw.moveTo(x,y);});
+    ctxRw.strokeStyle='#02d7fa';ctxRw.lineWidth=1.5;ctxRw.stroke();
+    if(lossHist.length>1){
+      const ml=Math.min(...lossHist),xl=Math.max(...lossHist);
+      ctxRw.beginPath();
+      lossHist.forEach((v,i)=>{const x=P.l+i*PW/(lossHist.length-1),y=P.t+PH*(1-(v-ml)/(xl-ml+0.001));i?ctxRw.lineTo(x,y):ctxRw.moveTo(x,y);});
+      ctxRw.strokeStyle='rgba(240,80,80,0.7)';ctxRw.lineWidth=1;ctxRw.setLineDash([3,3]);ctxRw.stroke();ctxRw.setLineDash([]);
+    }
+    if(avgHist.length>1){
+      ctxRw.beginPath();
+      avgHist.forEach((v,i)=>{const x=P.l+i*PW/(avgHist.length-1),y=P.t+PH*(1-(v-mn)/(mx-mn+1));i?ctxRw.lineTo(x,y):ctxRw.moveTo(x,y);});
+      ctxRw.strokeStyle='rgba(240,160,48,0.8)';ctxRw.lineWidth=1;ctxRw.setLineDash([2,2]);ctxRw.stroke();ctxRw.setLineDash([]);
+    }
+    ctxRw.fillStyle='rgba(2,215,250,0.5)';ctxRw.font='8px monospace';ctxRw.textAlign='left';
+    ctxRw.fillText('Reward',P.l,P.t+9);
+    ctxRw.fillStyle='rgba(240,80,80,0.6)';ctxRw.fillText('Loss',P.l+42,P.t+9);
+    ctxRw.fillStyle='rgba(240,160,48,0.7)';ctxRw.fillText('Avg',P.l+70,P.t+9);
+  }
+
+  // ── HEATMAP ──
+  function initHm(canvas){canvasHm=canvas;ctxHm=canvas.getContext('2d');}
+  function ylgnbu(t){
+    if(t<0.25){const r=t/0.25;return[255-Math.round(r*30),255-Math.round(r*35),153+Math.round(r*50)];}
+    if(t<0.5){const r=(t-0.25)/0.25;return[225-Math.round(r*100),220-Math.round(r*85),203+Math.round(r*30)];}
+    if(t<0.75){const r=(t-0.5)/0.25;return[125-Math.round(r*60),135-Math.round(r*60),233-Math.round(r*30)];}
+    const r=(t-0.75)/0.25;return[65-Math.round(r*30),75-Math.round(r*40),203-Math.round(r*50)];
+  }
+  function updateHeatmap(){
+    if(!ctxHm||!canvasHm||!pallet) return;
+    const W=canvasHm.width,H=canvasHm.height;
+    ctxHm.clearRect(0,0,W,H);
+    const occ=Array.from({length:PALLET_W},(_,x)=>Array.from({length:PALLET_D},(_,y)=>pallet[x][y].filter(v=>v>0).length));
+    const P={t:6,b:24,l:22,r:6};
+    const CW=(W-P.l-P.r)/PALLET_W,CH=(H-P.t-P.b)/PALLET_D;
+    for(let x=0;x<PALLET_W;x++) for(let y=0;y<PALLET_D;y++){
+      const v=occ[x][y]/MAX_H;
+      const[r,g,b]=ylgnbu(v);
+      ctxHm.fillStyle=`rgb(${r},${g},${b})`;
+      ctxHm.fillRect(P.l+x*CW,P.t+y*CH,CW-1,CH-1);
+      ctxHm.fillStyle=v>0.55?'#fff':'#222';
+      ctxHm.font='bold 10px monospace';ctxHm.textAlign='center';
+      ctxHm.fillText(occ[x][y],P.l+x*CW+CW/2,P.t+y*CH+CH/2+4);
+    }
+    ctxHm.fillStyle='rgba(2,215,250,0.35)';ctxHm.font='8px monospace';
+    for(let x=0;x<PALLET_W;x++){ctxHm.textAlign='center';ctxHm.fillText(x,P.l+x*CW+CW/2,H-P.b+12);}
+    for(let y=0;y<PALLET_D;y++){ctxHm.textAlign='right';ctxHm.fillText(y,P.l-2,P.t+y*CH+CH/2+4);}
+    const cb=ctxHm.createLinearGradient(P.l,0,W-P.r,0);
+    cb.addColorStop(0,'rgb(255,255,153)');cb.addColorStop(0.5,'rgb(65,182,196)');cb.addColorStop(1,'rgb(37,52,148)');
+    ctxHm.fillStyle=cb;ctxHm.fillRect(P.l,H-P.b+3,W-P.l-P.r,5);
+    ctxHm.fillStyle='rgba(2,215,250,0.25)';ctxHm.font='8px monospace';ctxHm.textAlign='right';
+    ctxHm.fillText('MYND Intelligence',W-P.r,H-P.b-2);
+  }
+
+  function updateChipEp(){
+    const ids=['drl-ep','drl-boxes','drl-occ','drl-rew','drl-eps','drl-qmax','drl-loss','drl-avg','drl-best'];
+    const ep=document.getElementById('drl-ep');if(ep) ep.innerHTML=`Ep <b>${episode}</b>`;
+    const bx=document.getElementById('drl-boxes');if(bx) bx.innerHTML=`Caixas <b>${placedBoxes?placedBoxes.length:0}</b>`;
+    const occ=document.getElementById('drl-occ');
+    if(occ&&pallet){const o=placedBoxes.reduce((a,b)=>a+b.dims[0]*b.dims[1]*b.dims[2],0)/(PALLET_W*PALLET_D*MAX_H);occ.innerHTML=`Ocupação <b>${(o*100).toFixed(0)}%</b>`;}
+    const rw=document.getElementById('drl-rew');if(rw) rw.innerHTML=`Reward <b>${epReward.toFixed(0)}</b>`;
+    const eps=document.getElementById('drl-eps');if(eps) eps.innerHTML=`ε <b>${epsilon.toFixed(3)}</b>`;
+    const qm=document.getElementById('drl-qmax');if(qm) qm.innerHTML=`Q-max <b>${Math.max(...qVals).toFixed(2)}</b>`;
+    const ls=document.getElementById('drl-loss');if(ls) ls.innerHTML=`Loss <b>${currentLoss.toFixed(4)}</b>`;
+    const av=document.getElementById('drl-avg');if(av) av.innerHTML=`Avg100 <b>${avgReward.toFixed(1)}</b>`;
+    const bs=document.getElementById('drl-best');if(bs) bs.innerHTML=`Best <b>${bestAvg>-Infinity?bestAvg.toFixed(0):'—'}</b>`;
+  }
+
+  // ── LOOP PRINCIPAL ──
+  let lastT=0;
+  function loop(t){
+    if(!running) return;
+    raf3d=requestAnimationFrame(loop);
+    if(paused){renderer3d&&renderer3d.render(scene3d,camera3d);return;}
+    const dt=Math.min((t-lastT)/1000,0.05);lastT=t;
+    // Câmera orbita
+    camAngle+=dt*0.1;
+    camera3d.position.x=2.5+Math.cos(camAngle)*10;
+    camera3d.position.z=2.5+Math.sin(camAngle)*10;
+    camera3d.position.y=11+Math.sin(camAngle*0.3)*1.5;
+    camera3d.lookAt(2.5,2,2.5);
+    // Agente
+    agentT+=dt*3;
+    agentGroup.position.x=2.5+Math.sin(agentT*0.4)*1.8;
+    agentGroup.position.z=2.5+Math.cos(agentT*0.3)*1.8;
+    agentGroup.position.y=0.2+Math.abs(Math.sin(agentT*0.6))*0.4;
+    armMesh.rotation.x=Math.sin(agentT*0.5)*0.4;
+    agentGroup.rotation.y+=dt*1.5;
+    // Passo de ação
+    actionTimer+=dt*speed;
+    if(actionTimer>0.5&&!episodeDone){
+      actionTimer=0;
+      const done=doStep();
+      if(done){
+        episodeDone=true;
+        rewardHist.push(epReward);lossHist.push(currentLoss);
+        const win=rewardHist.slice(-100);
+        avgReward=win.reduce((a,b)=>a+b,0)/win.length;
+        avgHist.push(avgReward);
+        if(win.length>=5&&avgReward>bestAvg) bestAvg=avgReward;
+        if(rewardHist.length>MAX_HIST){rewardHist.shift();lossHist.shift();avgHist.shift();}
+        setTimeout(()=>{episodeDone=false;newEpisode();},300/speed);
+      }
+    }
+    renderer3d&&renderer3d.render(scene3d,camera3d);
+    drawNN();drawReward();
+  }
+
+  function start(){
+    if(running) return;
+    running=true;lastT=performance.now();
+    loop(lastT);
+  }
+  function stop(){running=false;if(raf3d){cancelAnimationFrame(raf3d);raf3d=null;}destroyThree();}
+
+  function init(c3d,cnn,crw,chm){
+    // Sempre reinicializa — limpa estado anterior ao fechar/reabrir o modal
+    ctxNN=null;ctxRw=null;ctxHm=null;
+    canvasNN=null;canvasRw=null;canvasHm=null;
+    paused=false;episodeDone=false;actionTimer=0;
+    initThree(c3d);initNN(cnn);initRw(crw);initHm(chm);
+    resetEnv();updateChipEp();
+  }
+
+  return {
+    init,start,stop,
+    toggle(){paused=!paused;return paused;},
+    reset(){episode=1;epsilon=1.0;bestAvg=-Infinity;avgReward=0;learnStep=0;episodeDone=false;rewardHist.length=0;lossHist.length=0;avgHist.length=0;resetEnv();updateChipEp();},
+    setSpeed(s){speed=s;},
+    isRunning(){return running;},
+    drawNN,drawReward,updateHeatmap
+  };
+})();
+
+// ══════════════════════════════════════════════════════════════
+//  SERVICE CATALOG DATA (com slide DRL para "Integração com IA")
+// ══════════════════════════════════════════════════════════════
 const svcData = {
   print3d:{label:'Serviço 01',title:'Impressão 3D de Precisão',desc:'Prototipagem rápida e fabricação de peças funcionais com tolerâncias rigorosas. Escolha o tipo de peça — clique para ver detalhes e solicitar orçamento.',items:[
     {name:'Protótipo Funcional',cat:'Impressão 3D · FDM',desc:'Prototipagem rápida de peças funcionais para validação de conceito, encaixe e montagem. Entrega em até 72h para geometrias padrão.',images:['assets/catalogo/3d-prototipo-1.jpg'],obj:null,specs:{'Material':'PLA / PETG / ABS','Tolerância':'± 0.1mm','Prazo':'até 72h','Acabamento':'Padrão / Liso / Resina'},waMsg:'Olá! Tenho interesse em Prototipagem Funcional 3D da MYND.'},
     {name:'Peças de Alta Resistência',cat:'Impressão 3D · FDM',desc:'Peças para aplicações mecânicas com exigência de resistência a esforços, temperatura e impacto.',images:['assets/catalogo/3d-resistencia-1.png'],obj:null,specs:{'Material':'PETG-CF / Nylon / PC','Tolerância':'± 0.15mm','Aplicação':'Mecânica / Industrial'},waMsg:'Olá! Tenho interesse em Peças 3D de Alta Resistência da MYND.'},
-    {name:'Modelos Expositivos / Maquetes',cat:'Impressão 3D · Resina SLA',desc:'Modelos de alta fidelidade para apresentação e marketing. Acabamento superficial superior com resina SLA.',images:['assets/catalogo/3d-maquete-1.png'],obj:'assets/catalogo/Astorino.glb',glbOrientation: '0deg 270deg 90deg',specs:{'Material':'Resina Standard / ABS-Like','Precisão':'± 0.05mm','Acabamento':'Polido / Pintado'},waMsg:'Olá! Tenho interesse em Modelos Expositivos 3D da MYND.'}
+    {name:'Modelos Expositivos / Maquetes',cat:'Impressão 3D · Resina SLA',desc:'Modelos de alta fidelidade para apresentação e marketing. Acabamento superficial superior com resina SLA.',images:['assets/catalogo/3d-maquete-1.png'],obj:'assets/catalogo/Astorino.glb',glbOrientation:'0deg 270deg 90deg',specs:{'Material':'Resina Standard / ABS-Like','Precisão':'± 0.05mm','Acabamento':'Polido / Pintado'},waMsg:'Olá! Tenho interesse em Modelos Expositivos 3D da MYND.'}
   ]},
   pcb:{label:'Serviço 02',title:'Fabricação de PCB & CNC',desc:'Do esquemático ao produto final: design, fresagem e montagem de placas de circuito impresso.',items:[
     {name:'PCB Simples Face',cat:'Eletrônica · CNC Routing',desc:'Placa simples face para protótipos e projetos com baixa densidade de componentes. Fresagem de alta precisão.',images:['assets/catalogo/pcb3.png'],obj:null,specs:{'Camadas':'1','Precisão':'± 0.1mm','Material':'FR4','Prazo':'até 5 dias'},waMsg:'Olá! Tenho interesse em PCB Simples Face da MYND.'},
@@ -795,13 +952,217 @@ const svcData = {
     {name:'Placa IoT Completa',cat:'Eletrônica · Embarcado · Firmware',desc:'Desenvolvimento completo: esquemático, layout, fabricação e firmware. Placa pronta para integração IoT.',images:['assets/catalogo/pcb.png'],obj:'assets/pcbmodel3d.glb',specs:{'MCU':'ESP32 / Arduino','Conectividade':'Wi-Fi · BLE · MQTT','Entregável':'Hardware + Firmware'},waMsg:'Olá! Tenho interesse em Placa IoT completa pela MYND.'}
   ]},
   software:{label:'Serviço 03',title:'Sites, Dashboards & IA',desc:'Desenvolvimento web moderno, painéis de dados interativos e integração com IA.',items:[
-    {name:'Site Institucional',cat:'Web · HTML / React',desc:'Site profissional responsivo com identidade visual personalizada, SEO otimizado e integração com WhatsApp.',images:['assets/catalogo/mynd-institucional.png', 'assets/catalogo/mynd-institucional-mobile.png','assets/catalogo/mynd-store.png', 'assets/catalogo/mynd-store-mobile.png'],obj:null,specs:{'Tecnologia':'React / HTML','Prazo':'até 7 dias','Responsivo':'Sim','SEO':'Incluído'},waMsg:'Olá! Tenho interesse em Site Institucional pela MYND.'},
+    {name:'Site Institucional',cat:'Web · HTML / React',desc:'Site profissional responsivo com identidade visual personalizada, SEO otimizado e integração com WhatsApp.',images:['assets/catalogo/mynd-institucional.png','assets/catalogo/mynd-institucional-mobile.png','assets/catalogo/mynd-store.png','assets/catalogo/mynd-store-mobile.png'],obj:null,specs:{'Tecnologia':'React / HTML','Prazo':'até 7 dias','Responsivo':'Sim','SEO':'Incluído'},waMsg:'Olá! Tenho interesse em Site Institucional pela MYND.'},
     {name:'Dashboard de Dados',cat:'Web · Analytics · React',desc:'Painel interativo para KPIs, métricas de negócio e dados em tempo real. Gráficos customizados e exportação.',images:['assets/catalogo/dashboard-1.jpg'],obj:null,specs:{'Tecnologia':'React + Supabase','Gráficos':'Chart.js / D3','Real-time':'Opcional','Auth':'Incluído'},waMsg:'Olá! Tenho interesse em Dashboard de Dados pela MYND.'},
-    {name:'Integração com IA',cat:'Software · LLM · Python',desc:'Integração de LLMs em sistemas existentes ou novos. Chatbots, análise de documentos e automação inteligente.',images:['assets/catalogo/ia-1.jpg'],obj:null,specs:{'Modelos':'GPT / Claude / Llama','Tipo':'RAG · Agentes · Chatbot','Deploy':'Incluído'},waMsg:'Olá! Tenho interesse em Integração com IA pela MYND.'}
+    // ▼▼▼ ITEM COM SIMULAÇÃO DRL — slides individuais no carrossel ▼▼▼
+    {
+      name:'Integração com IA',
+      cat:'Software · LLM · Python · Deep RL',
+      desc:'Integração de LLMs e modelos de Deep Reinforcement Learning em sistemas reais. Chatbots, análise de documentos, automação inteligente e agentes autônomos de paletização treinados com PPO e DQN. Veja ao lado a simulação ao vivo do agente empilhando caixas em tempo real.',
+      // slides: null sinaliza que este produto usa o carrossel DRL especial
+      images: null,
+      obj: null,
+      drl: true,   // FLAG — renderiza slides DRL ao invés de imagens
+      specs:{
+        'Modelos':'GPT / Claude / Llama',
+        'RL':'PPO · DQN (StableBaselines3)',
+        'Ambiente':'PalletizingEnv 5×5×5',
+        'Tipo':'RAG · Agentes · DRL',
+        'Deploy':'Incluído'
+      },
+      waMsg:'Olá! Tenho interesse em Integração com IA (DRL / LLM) pela MYND.'
+    }
+    // ▲▲▲
   ]}
 };
 
-// ── Service Catalog Modal ──
+// ══════════════════════════════════════════════════════════════
+//  SLIDE DRL — gera os 4 slides individualmente
+// ══════════════════════════════════════════════════════════════
+function buildDRLSlides(){
+  // Slide 0 — Ambiente 3D
+  const s0=document.createElement('div');
+  s0.className='prod-slide drl-slide';
+  s0.innerHTML=`
+    <div class="drl-sim-wrap" style="height:100%;display:flex;flex-direction:column">
+      <div class="drl-tab-bar">
+        <div class="drl-tab active" onclick="drlTab(0,this)">⬡ Ambiente 3D</div>
+        <div class="drl-tab" onclick="drlTab(1,this)">⬡ Rede Neural</div>
+        <div class="drl-tab" onclick="drlTab(2,this)">⬡ Treino</div>
+        <div class="drl-tab" onclick="drlTab(3,this)">⬡ Heatmap</div>
+      </div>
+      <div class="drl-pane active" id="drl-pane-0">
+        <div class="drl-canvas-wrap"><canvas id="drl-c3d"></canvas></div>
+        <div class="drl-chips">
+          <span class="drl-chip" id="drl-ep">Ep <b>1</b></span>
+          <span class="drl-chip" id="drl-boxes">Caixas <b>0</b></span>
+          <span class="drl-chip" id="drl-occ">Ocupação <b>0%</b></span>
+          <span class="drl-chip" id="drl-rew">Reward <b>0</b></span>
+        </div>
+        <div class="drl-ctrl">
+          <button class="drl-btn" id="drl-btn-play" onclick="drlToggle()">⏸ Pausar</button>
+          <button class="drl-btn" onclick="drlReset()">↺ Reset</button>
+          <span class="drl-lbl">Vel <input type="range" min="1" max="12" value="5" style="width:55px" oninput="drlSpeed(this.value)"> <b id="drl-spd">5×</b></span>
+        </div>
+      </div>
+      <div class="drl-pane" id="drl-pane-1">
+        <div class="drl-canvas-wrap"><canvas id="drl-cnn"></canvas></div>
+        <div class="drl-chips">
+          <span class="drl-chip" id="drl-eps">ε <b>1.000</b></span>
+          <span class="drl-chip" id="drl-qmax">Q-max <b>0.00</b></span>
+          <span class="drl-chip" id="drl-loss">Loss <b>—</b></span>
+          <span class="drl-chip" style="font-size:9px">state→256→256→128→125</span>
+        </div>
+      </div>
+      <div class="drl-pane" id="drl-pane-2">
+        <div class="drl-canvas-wrap"><canvas id="drl-crw"></canvas></div>
+        <div class="drl-chips">
+          <span class="drl-chip" id="drl-avg">Avg100 <b>0</b></span>
+          <span class="drl-chip" id="drl-best">Best <b>—</b></span>
+          <span class="drl-chip">γ <b>0.95</b></span>
+          <span class="drl-chip">lr <b>5e-5</b></span>
+        </div>
+      </div>
+      <div class="drl-pane" id="drl-pane-3">
+        <div class="drl-canvas-wrap"><canvas id="drl-chm"></canvas></div>
+        <div class="drl-chips">
+          <span class="drl-chip">Regra suporte <b>70%</b></span>
+          <span class="drl-chip">Orientações <b>6</b></span>
+          <span class="drl-chip">Lookahead k <b>10</b></span>
+        </div>
+      </div>
+    </div>`;
+  return [s0];
+}
+
+let drlActivePane=0;
+function drlTab(idx,el){
+  drlActivePane=idx;
+  document.querySelectorAll('.drl-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  document.querySelectorAll('.drl-pane').forEach((p,i)=>p.classList.toggle('active',i===idx));
+  // Redimensiona canvas quando o painel fica visível
+  setTimeout(()=>{
+    const canvas={0:'drl-c3d',1:'drl-cnn',2:'drl-crw',3:'drl-chm'}[idx];
+    const el=document.getElementById(canvas);
+    if(!el) return;
+    const wrap=el.parentElement;
+    el.width=wrap.clientWidth||320;
+    el.height=wrap.clientHeight||220;
+    DRL.drawNN&&DRL.drawNN();DRL.drawReward&&DRL.drawReward();DRL.updateHeatmap&&DRL.updateHeatmap();
+  },50);
+}
+function drlToggle(){
+  const p=DRL.toggle();
+  const btn=document.getElementById('drl-btn-play');
+  if(btn) btn.textContent=p?'▶ Continuar':'⏸ Pausar';
+}
+function drlReset(){DRL.reset();}
+function drlSpeed(v){DRL.setSpeed(+v);const l=document.getElementById('drl-spd');if(l) l.textContent=v+'×';}
+
+// Inicializa DRL quando os canvas ficam visíveis
+function initDRLOnVisible(){
+  const c3=document.getElementById('drl-c3d');
+  const cn=document.getElementById('drl-cnn');
+  const cr=document.getElementById('drl-crw');
+  const ch=document.getElementById('drl-chm');
+  if(!c3||!cn||!cr||!ch) return;
+  // Define tamanhos baseado no container
+  [c3,cn,cr,ch].forEach(c=>{
+    const w=c.parentElement.clientWidth||320,h=c.parentElement.clientHeight||220;
+    c.width=w;c.height=h;
+  });
+  DRL.init(c3,cn,cr,ch);
+  DRL.start();
+}
+
+// ══════════════════════════════════════════════════════════════
+//  PRODUCT DETAIL MODAL — lógica do carrossel
+// ══════════════════════════════════════════════════════════════
+let pIdx=0,pSlides=[],pIsDRL=false;
+
+function openProd(svcId,itemIdx){
+  const item=svcData[svcId].items[itemIdx];
+  pSlides=[];pIsDRL=false;
+
+  const slidesContainer=document.getElementById('prodSlides');
+  const navContainer=document.getElementById('prodNav');
+  slidesContainer.innerHTML='';
+  navContainer.innerHTML='';
+  DRL.stop();
+
+  if(item.drl){
+    // Produto DRL — insere os slides interativos
+    pIsDRL=true;
+    const drlSlides=buildDRLSlides();
+    drlSlides.forEach(s=>slidesContainer.appendChild(s));
+    pSlides=[{type:'drl'}];
+    // Nav dot único
+    navContainer.innerHTML='<button class="prod-nav-btn active"></button>';
+    // Esconde setas
+    document.querySelector('.prod-arr.prev').style.display='none';
+    document.querySelector('.prod-arr.next').style.display='none';
+    document.getElementById('prod3dHint').style.display='none';
+    // Inicializa DRL após render
+    setTimeout(initDRLOnVisible,80);
+  } else {
+    document.querySelector('.prod-arr.prev').style.display='';
+    document.querySelector('.prod-arr.next').style.display='';
+    // Slide 3D (se existir)
+    if(item.obj) pSlides.push({type:'3d',src:item.obj,orientation:item.glbOrientation||''});
+    // Slides de imagens
+    if(item.images&&Array.isArray(item.images)){
+      item.images.forEach(img=>{if(img) pSlides.push({type:'img',src:img});});
+    }
+    pIdx=0;
+    const slidesHTML=pSlides.map((s,i)=>{
+      if(s.type==='3d') return`<div class="prod-slide" data-index="${i}"><model-viewer src="${s.src}" alt="Modelo 3D" ${s.orientation?`orientation="${s.orientation}"`:''}  auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" camera-controls shadow-intensity="1" exposure="1.2" loading="lazy" style="width:100%;height:100%;display:block;background:#040b12;--poster-color:transparent;"></model-viewer></div>`;
+      return`<div class="prod-slide" data-index="${i}"><img src="${s.src}" alt="${item.name}" onerror="this.style.opacity='.15'"></div>`;
+    }).join('');
+    slidesContainer.innerHTML=slidesHTML;
+    navContainer.innerHTML=pSlides.map((_,i)=>`<button class="prod-nav-btn${i===0?' active':''}" onclick="goSlide(${i})"></button>`).join('');
+    const hint=document.getElementById('prod3dHint');
+    hint.style.display=pSlides[0]&&pSlides[0].type==='3d'?'block':'none';
+  }
+
+  document.getElementById('prodCat').textContent=item.cat||'';
+  document.getElementById('prodName').textContent=item.name||'';
+  document.getElementById('prodDesc').textContent=item.desc||'';
+  const sp=item.specs||{};
+  const spc=document.getElementById('prodSpecs');
+  spc.innerHTML=Object.keys(sp).length?`<h4>Especificações</h4>${Object.entries(sp).map(([k,v])=>`<div class="prod-spec-row"><span>${k}</span><span>${v}</span></div>`).join('')}`:'';
+  document.getElementById('prodWa').href=`https://wa.me/5511942575063?text=${encodeURIComponent(item.waMsg||'Olá!')}`;
+
+  if(!pIsDRL) pUpdate();
+  document.getElementById('prodOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function pUpdate(){
+  if(pIsDRL) return;
+  document.getElementById('prodSlides').style.transform=`translateX(-${pIdx*100}%)`;
+  document.querySelectorAll('.prod-nav-btn').forEach((b,i)=>b.classList.toggle('active',i===pIdx));
+  const hint=document.getElementById('prod3dHint');
+  if(hint) hint.style.display=(pSlides[pIdx]&&pSlides[pIdx].type==='3d')?'block':'none';
+}
+function goSlide(i){pIdx=i;pUpdate();}
+function prodPrev(){if(pIsDRL)return;pIdx=(pIdx-1+Math.max(pSlides.length,1))%Math.max(pSlides.length,1);pUpdate();}
+function prodNext(){if(pIsDRL)return;pIdx=(pIdx+1)%Math.max(pSlides.length,1);pUpdate();}
+
+function closeProd(){
+  DRL.stop();
+  document.getElementById('prodOverlay').classList.remove('open');
+  document.getElementById('prodSlides').innerHTML='';
+  document.getElementById('prodNav').innerHTML='';
+  document.querySelector('.prod-arr.prev').style.display='';
+  document.querySelector('.prod-arr.next').style.display='';
+  pSlides=[];pIdx=0;pIsDRL=false;
+  document.body.style.overflow='';
+}
+function closeProdOnBg(e){if(e.target===document.getElementById('prodOverlay'))closeProd();}
+
+// ══════════════════════════════════════════════════════════════
+//  SERVICE CATALOG MODAL
+// ══════════════════════════════════════════════════════════════
 function openSvc(id){
   const s=svcData[id];
   document.getElementById('svcLabel').textContent=s.label;
@@ -810,9 +1171,14 @@ function openSvc(id){
   document.getElementById('svcProdGrid').innerHTML=s.items.map((item,i)=>`
     <div class="svc-prod" onclick="openProd('${id}',${i})">
       <div class="svc-prod-thumb">
-        ${item.images&&item.images[0]
-          ?`<img src="${item.images[0]}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=\\'svc-prod-ph\\'><svg viewBox=\\'0 0 40 40\\' fill=\\'none\\' width=\\'36\\'><rect x=\\'4\\' y=\\'4\\' width=\\'32\\' height=\\'32\\' stroke=\\'#02d7fa\\' stroke-width=\\'1.5\\'/></svg><span>Em breve</span></div>'">`
-          :`<div class="svc-prod-ph"><svg viewBox="0 0 40 40" fill="none" width="36"><rect x="4" y="4" width="32" height="32" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div>`}
+        ${item.drl
+          ?`<div class="svc-prod-ph" style="background:linear-gradient(135deg,#040b12,#091820)">
+              <svg viewBox="0 0 40 40" fill="none" width="36"><rect x="4" y="4" width="32" height="32" rx="4" stroke="#02d7fa" stroke-width="1.5"/><polyline points="8,28 14,20 20,24 26,16 32,18" stroke="#02d7fa" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="32" cy="18" r="2.5" fill="#02d7fa"/></svg>
+              <span style="color:rgba(2,215,250,0.7)">DRL · PPO · LLM</span>
+            </div>`
+          :item.images&&item.images[0]
+            ?`<img src="${item.images[0]}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=svc-prod-ph><svg viewBox=\\'0 0 40 40\\' fill=\\'none\\' width=\\'36\\'><rect x=\\'4\\' y=\\'4\\' width=\\'32\\' height=\\'32\\' stroke=\\'#02d7fa\\' stroke-width=\\'1.5\\'/></svg><span>Em breve</span></div>'">`
+            :`<div class="svc-prod-ph"><svg viewBox="0 0 40 40" fill="none" width="36"><rect x="4" y="4" width="32" height="32" stroke="#02d7fa" stroke-width="1.5"/></svg><span>Em breve</span></div>`}
       </div>
       <div class="svc-prod-body">
         <div class="svc-prod-name">${item.name}</div>
@@ -826,107 +1192,9 @@ function openSvc(id){
 function closeSvc(){document.getElementById('svcOverlay').classList.remove('open');document.body.style.overflow='';}
 function closeSvcOnBg(e){if(e.target===document.getElementById('svcOverlay'))closeSvc();}
 
-// ── Product Detail Modal ──
-let pIdx = 0;
-let pSlides = [];
-
-function openProd(svcId, itemIdx) {
-  const item = svcData[svcId].items[itemIdx];
-
-  pSlides = [];
-
-  // Slide 0: modelo 3D (se existir)
-  if (item.obj) {
-    pSlides.push({ type: '3d', src: item.obj });
-  }
-
-  // Slides seguintes: imagens em ordem
-  if (item.images && Array.isArray(item.images)) {
-    item.images.forEach(img => {
-      if (img) pSlides.push({ type: 'img', src: img });
-    });
-  }
-
-  pIdx = 0;
-
-  const slidesHTML = pSlides.map((s, index) => {
-    if (s.type === '3d') {
-    const orientation = item.glbOrientation ? `orientation="${item.glbOrientation}"` : '';
-      return `
-        <div class="prod-slide" data-index="${index}">
-          <model-viewer
-            src="${s.src}"
-            alt="Modelo 3D"
-            ${orientation}
-            auto-rotate
-            auto-rotate-delay="0"
-            rotation-per-second="30deg"
-            camera-controls
-            shadow-intensity="1"
-            exposure="1.2"
-            loading="lazy"
-            style="width:100%;height:100%;display:block;background:#040b12;--poster-color:transparent;">
-          </model-viewer>
-        </div>`;
-}
-    return `
-      <div class="prod-slide" data-index="${index}">
-        <img src="${s.src}" alt="${item.name}"
-          onerror="this.style.opacity='.2'">
-      </div>`;
-  }).join('');
-
-  document.getElementById('prodSlides').innerHTML = slidesHTML;
-
-  document.getElementById('prodNav').innerHTML = pSlides.map((s, i) =>
-    `<button class="prod-nav-btn${i === 0 ? ' active' : ''}" onclick="goSlide(${i})"></button>`
-  ).join('');
-
-  document.getElementById('prodCat').textContent = item.cat || '';
-  document.getElementById('prodName').textContent = item.name || '';
-  document.getElementById('prodDesc').textContent = item.desc || '';
-
-  const specs = item.specs || {};
-  const specsCont = document.getElementById('prodSpecs');
-  if (Object.keys(specs).length > 0) {
-    specsCont.innerHTML = `<h4>Especificações</h4>` +
-      Object.entries(specs).map(([k, v]) =>
-        `<div class="prod-spec-row"><span>${k}</span><span>${v}</span></div>`
-      ).join('');
-  } else {
-    specsCont.innerHTML = '';
-  }
-
-  document.getElementById('prodWa').href =
-    `https://wa.me/5511942575063?text=${encodeURIComponent(item.waMsg || 'Olá!')}`;
-
-  pUpdate();
-  document.getElementById('prodOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function pUpdate() {
-  document.getElementById('prodSlides').style.transform = `translateX(-${pIdx * 100}%)`;
-  document.querySelectorAll('.prod-nav-btn').forEach((b, i) =>
-    b.classList.toggle('active', i === pIdx)
-  );
-  const hint = document.getElementById('prod3dHint');
-  if (hint) hint.style.display = (pSlides[pIdx] && pSlides[pIdx].type === '3d') ? 'block' : 'none';
-}
-
-function goSlide(i) { pIdx = i; pUpdate(); }
-function prodPrev() { pIdx = (pIdx - 1 + Math.max(pSlides.length,1)) % Math.max(pSlides.length,1); pUpdate(); }
-function prodNext() { pIdx = (pIdx + 1) % Math.max(pSlides.length,1); pUpdate(); }
-
-function closeProd() {
-  document.getElementById('prodOverlay').classList.remove('open');
-  document.getElementById('prodSlides').innerHTML = '';
-  document.getElementById('prodNav').innerHTML = '';
-  pSlides = [];
-  pIdx = 0;
-}
-function closeProdOnBg(e){if(e.target===document.getElementById('prodOverlay'))closeProd();}
-
-// ══ CASE DATA ══
+// ══════════════════════════════════════════════════════════════
+//  CASE DATA & MODAL
+// ══════════════════════════════════════════════════════════════
 const cd={
   digitalTwin:{title:'Digital Twin — Gêmeo Digital em Tempo Real',cat:'Hardware · C++ · Firebase · 3D',desc:'Sistema de gêmeo digital que sincroniza dados de sensores com Firebase Realtime Database. Interface web com modelo 3D que replica movimentos físicos em tempo real.',tags:['C++','Firebase','HTML/JS','Three.js','3D GLB','MPU Sensor'],img:'assets/DigitalTwin.png',gif:null,video:'sOxBM0dqa8A',glb:'https://raw.githubusercontent.com/RomuloEXavier2/DigitalTwin/main/modelo.glb',live:null},
   roboticaSub:{title:'Robótica Subaquática — ROV de Exploração',cat:'Hardware · Robótica · Eletrônica',desc:'ROV subaquático com controle via interface web. Propulsores vetoriais, sensor de profundidade, câmera embarcada com transmissão ao vivo e painel de telemetria.',tags:['HTML','Embarcado','ROV','Propulsores','Câmera','Telemetria'],img:'assets/ROV.png',gif:null,video:null,glb:null,live:null},
@@ -937,7 +1205,6 @@ const cd={
   industrialMonitor:{title:'MYND Monitor — Monitoramento Industrial Real-Time',cat:'Software · React · IoT · Dashboard Industrial',desc:'Monitoramento de linha de produção com métricas ao vivo, OEE, alertas automáticos e integração IoT para sensores em campo.',tags:['React','IoT','Real-time','Dashboard','OEE','Sensores'],img:'assets/IndustrialMonitor.png',gif:null,video:null,glb:null,live:'https://industrial-bright-eye.lovable.app'}
 };
 
-// ── Case Modal ──
 function om(id){
   const d=cd[id];
   const tabs=['Visão Geral','📹 Vídeo'];
@@ -945,42 +1212,38 @@ function om(id){
   document.getElementById('mtabs').innerHTML=tabs.map((t,i)=>`<div class="mtab${i===0?' active':''}" onclick="mst(${i})">${t}</div>`).join('');
   const me=document.getElementById('mmedia');
   if(d.gif) me.innerHTML=`<img class="mgif" src="${d.gif}" alt="${d.title}" onerror="this.src='${d.img||''}'">`;
-  else if(d.img) me.innerHTML=`<img class="mimg" src="${d.img}" alt="${d.title}" onerror="this.outerHTML='<div class=\\'miph\\'><p>Imagem em breve</p></div>'">`;
-  else me.innerHTML=`<div class="miph"><svg viewBox="0 0 56 56" fill="none" width="56"><rect x="4" y="4" width="48" height="48" rx="4" stroke="#02d7fa" stroke-width="1.5"/></svg><p>GIF em breve</p></div>`;
+  else if(d.img) me.innerHTML=`<img class="mimg" src="${d.img}" alt="${d.title}" onerror="this.outerHTML='<div class=miph><p>Imagem em breve</p></div>'">`;
+  else me.innerHTML=`<div class="miph"><p>GIF em breve</p></div>`;
   const links=[];
   if(d.live) links.push(`<a href="${d.live}" target="_blank" class="mlive">↗ Ver ao Vivo</a>`);
   links.push(`<a href="https://wa.me/5511942575063?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20um%20projeto%20similar%20ao%20${encodeURIComponent(d.title)}" target="_blank" class="mwa">💬 Quero algo similar</a>`);
   document.getElementById('mp0').innerHTML=`<div class="mcat">${d.cat}</div><h2 class="mtit">${d.title}</h2><p class="mdesc">${d.desc}</p><div class="mtags2">${d.tags.map(t=>`<span class="mtag2">${t}</span>`).join('')}</div><div class="mlinks">${links.join('')}</div>`;
   document.getElementById('mp0').className='mpane active';
-  document.getElementById('mp1').innerHTML=d.video
-    ?`<iframe class="mviframe" src="https://www.youtube.com/embed/${d.video}?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="${d.title}"></iframe>`
-    :`<div class="mvph"><svg viewBox="0 0 56 56" fill="none" width="52"><rect x="4" y="10" width="48" height="36" rx="3" stroke="#02d7fa" stroke-width="1.5"/><polygon points="22,20 22,36 38,28" fill="#02d7fa" opacity=".3" stroke="#02d7fa" stroke-width="1.5"/></svg><p>Vídeo em breve — cole o ID do YouTube em <code>cd.${id}.video</code></p></div>`;
+  document.getElementById('mp1').innerHTML=d.video?`<iframe class="mviframe" src="https://www.youtube.com/embed/${d.video}?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="${d.title}"></iframe>`:`<div class="mvph"><p>Vídeo em breve</p></div>`;
   document.getElementById('mp1').className='mpane';
-  if(d.glb) document.getElementById('mp2').innerHTML=`<div style="position:relative"><model-viewer src="${d.glb}" alt="${d.title} — Modelo 3D" auto-rotate camera-controls shadow-intensity="1" exposure="0.8" style="width:100%;aspect-ratio:16/9;background:#040b12"></model-viewer><div class="m3d-hint">🖱 Arraste para girar · Scroll para zoom</div></div>`;
+  if(d.glb) document.getElementById('mp2').innerHTML=`<div style="position:relative"><model-viewer src="${d.glb}" alt="${d.title}" auto-rotate camera-controls shadow-intensity="1" exposure="0.8" style="width:100%;aspect-ratio:16/9;background:#040b12"></model-viewer><div class="m3d-hint">🖱 Arraste para girar · Scroll para zoom</div></div>`;
   document.getElementById('mp2').className='mpane';
   mst(0);
   document.getElementById('mov').classList.add('open');
   document.body.style.overflow='hidden';
 }
 function cm(){
-  const iframe=document.querySelector('#mp1 iframe');
-  if(iframe) iframe.src=iframe.src;
-  document.getElementById('mov').classList.remove('open');
-  document.body.style.overflow='';
+  const iframe=document.querySelector('#mp1 iframe');if(iframe) iframe.src=iframe.src;
+  document.getElementById('mov').classList.remove('open');document.body.style.overflow='';
 }
 function cmobg(e){if(e.target===document.getElementById('mov'))cm();}
 function mst(i){
   document.querySelectorAll('.mtab').forEach((t,j)=>t.classList.toggle('active',j===i));
   document.querySelectorAll('#mbox .mpane').forEach((p,j)=>p.classList.toggle('active',j===i));
 }
-
-// ── Case filter ──
 function filt(cat){
   document.querySelectorAll('.cc').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'flex':'none';});
   setTimeout(()=>document.getElementById('cases').scrollIntoView({behavior:'smooth'}),100);
 }
 
-// ── Cursor ──
+// ══════════════════════════════════════════════════════════════
+//  CURSOR
+// ══════════════════════════════════════════════════════════════
 const cur=document.getElementById('cursor'),cr=document.getElementById('cring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
@@ -990,17 +1253,18 @@ document.querySelectorAll('a,button,.cc,.sc,.dot,.svc-prod').forEach(el=>{
   el.addEventListener('mouseleave',()=>{cr.style.width='36px';cr.style.height='36px';cr.style.borderColor='rgba(2,215,250,.4)';});
 });
 
-// ── Scroll reveal ──
+// ══════════════════════════════════════════════════════════════
+//  SCROLL REVEAL + CONTADORES + NAV + BELIEVE
+// ══════════════════════════════════════════════════════════════
 const rv=document.querySelectorAll('.reveal');
 const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:.1});
 rv.forEach(r=>ro.observe(r));
 
-// ── Animated counters ──
 const cobs=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
-    if(!entry.isIntersecting)return;
+    if(!entry.isIntersecting) return;
     const el=entry.target,target=+el.dataset.target,suffix=el.dataset.suffix||'';
-    if(!target)return;
+    if(!target) return;
     let s=0,step=Math.ceil(target/(1600/16));
     const tick=()=>{s=Math.min(s+step,target);el.textContent=s+suffix;if(s<target)requestAnimationFrame(tick);};
     tick();cobs.unobserve(el);
@@ -1008,19 +1272,15 @@ const cobs=new IntersectionObserver(entries=>{
 },{threshold:.5});
 document.querySelectorAll('[data-target]').forEach(el=>cobs.observe(el));
 
-// ── Nav scroll ──
 window.addEventListener('scroll',()=>{
   document.getElementById('mnav').style.borderBottomColor=window.scrollY>60?'rgba(2,215,250,.22)':'rgba(2,215,250,.1)';
 });
-
-// ── Mobile nav ──
 function tnav(){
   const ul=document.querySelector('.nav-links');
   if(ul.style.display==='flex'){ul.style.display='none';}
   else{ul.style.cssText='display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(0,0,0,.97);padding:20px;gap:0;border-bottom:1px solid rgba(2,215,250,.15);z-index:999';}
 }
 
-// ── Believe cycle ──
 const phrases=['Não é a tecnologia que define o futuro — é quem tem a coragem de usá-la de verdade.','A melhor versão do seu produto ainda não existe. Vamos construir juntos.','Do papel à peça, do esquemático ao sistema: a MYND transforma visão em realidade tangível.','Precisão não é detalhe. Precisão é o produto.'];
 let bc=0;
 const btxt=document.getElementById('bt'),bdts=document.querySelectorAll('.dot');
@@ -1028,13 +1288,11 @@ function sb(i){bc=i;btxt.style.opacity='0';btxt.style.transform='translateY(14px
 bdts.forEach(d=>d.addEventListener('click',()=>sb(+d.dataset.i)));
 setInterval(()=>sb((bc+1)%phrases.length),4200);
 
-// ── ESC closes all modals ──
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){cm();closeSvc();closeProd();}});
-// ── Arrow keys for product carousel ──
 document.addEventListener('keydown',e=>{
-  if(document.getElementById('prodOverlay').classList.contains('open')){
-    if(e.key==='ArrowLeft')prodPrev();
-    if(e.key==='ArrowRight')prodNext();
+  if(e.key==='Escape'){cm();closeSvc();closeProd();}
+  if(document.getElementById('prodOverlay').classList.contains('open')&&!pIsDRL){
+    if(e.key==='ArrowLeft') prodPrev();
+    if(e.key==='ArrowRight') prodNext();
   }
 });
 </script>
